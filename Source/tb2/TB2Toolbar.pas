@@ -39,7 +39,7 @@ uses
   TB2Dock,
   TB2Item,
   {$IFnDEF FPC} Windows, Messages, {$ELSE}
-  Windows, WinDelphi, tb2Delphi, LMessages, ExtCtrls, LclIntf, LCLType,
+  Windows, tb2Delphi, LMessages, ExtCtrls, LclIntf, LCLType,
   {$ENDIF}
   Graphics, TB2Types;
 

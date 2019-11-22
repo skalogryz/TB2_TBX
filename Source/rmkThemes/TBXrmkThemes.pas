@@ -21,7 +21,7 @@ uses
 {$ENDIF}
   Types,   // System.Types (included for inline expansion)
   {$IFnDEF FPC} Windows, Messages, {$ELSE}
-  Windows, WinDelphi, LclIntf, LCLType, LCLStrConsts, Win32Int, InterfaceBase, LMessages, classes,
+  Windows, LclIntf, LCLType, LCLStrConsts, Win32Int, InterfaceBase, LMessages, classes,
   {$ENDIF}
   Graphics,
   TBXUtils;

@@ -33,7 +33,7 @@ interface
 
 uses
   SysUtils, Classes, Controls, Forms, Dialogs,
-  {$IFnDEF FPC} Windows, Messages, {$ELSE} Windows, windelphi, tb2Delphi, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages, {$ENDIF}
+  {$IFnDEF FPC} Windows, Messages, {$ELSE} Windows, tb2Delphi, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages, {$ENDIF}
   StdCtrls;
 
 type

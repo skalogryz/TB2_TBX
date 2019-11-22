@@ -20,7 +20,7 @@ uses
 {$ENDIF}
   Types,
   {$IFnDEF FPC} Windows, Messages,  {$ELSE}
-  Windows, WinDelphi, TB2delphi, LclIntf, LCLType, LCLStrConsts, Win32Int,
+  Windows, TB2delphi, LclIntf, LCLType, LCLStrConsts, Win32Int,
   InterfaceBase, LMessages,
   {$ENDIF}
   Graphics,

@@ -37,7 +37,7 @@ interface
 uses
   SysUtils, TBX, TBXThemes, TB2Common,
   {$IFnDEF FPC} Windows, Messages, {$ELSE}
-  Windows, windelphi, tb2Delphi, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages,
+  Windows, tb2Delphi, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages,
   {$ENDIF}
   Classes;
 

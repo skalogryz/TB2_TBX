@@ -31,7 +31,7 @@ interface
 
 uses
   {$IFnDEF FPC} Windows, Messages,  {$ELSE}
-  Windows, WinDelphi, TB2delphi, LclIntf, LCLType, LMessages,
+  Windows, TB2delphi, LclIntf, LCLType, LMessages,
   {$ENDIF}
   Graphics, TBXThemes, ImgList, SysUtils, Dialogs;
 

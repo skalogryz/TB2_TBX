@@ -37,7 +37,8 @@ interface
 uses
   Classes, Forms,
   {$IFnDEF FPC} Windows, Messages, {$ELSE}
-   Messages, windelphi, tb2Delphi, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages,
+  Windows,
+  Messages, tb2Delphi, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages,
   {$ENDIF}
   Graphics,
   ImgList;

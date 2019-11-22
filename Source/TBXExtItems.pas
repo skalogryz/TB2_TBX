@@ -40,7 +40,7 @@ uses
   Classes, SysUtils, Controls, StdCtrls, ExtCtrls,
   TBX, TBXThemes, TB2Item, TB2Toolbar, TB2ExtItems, TBXLists, TB2Dock,
   {$IFnDEF FPC} Windows, Messages, {$ELSE}
-  Windows, Types, WinDelphi, tb2Delphi, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages,
+  Windows, Types, tb2Delphi, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages,
   {$ENDIF}
   Graphics,
   TB2MRU;

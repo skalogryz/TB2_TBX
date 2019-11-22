@@ -44,7 +44,7 @@ uses
   SysUtils,
   TB2Types, tb2Control,
   {$IFnDEF FPC} Windows, Messages, Consts, {$ELSE}
-  Windows, tb2Delphi, Messages, WinDelphi, Win32Int, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages,
+  Windows, tb2Delphi, Messages, Win32Int, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages,
   {$ENDIF}
   IniFiles,
   Graphics,
@@ -879,7 +879,7 @@ function CloseButtonLoop(const Wnd: HWND; const ButtonRect: TRect;
     Result := PtInRect(ButtonRect, P);
   end;
 var
-  Msg: TMsg;
+  Msg: Windows.TMsg;
 begin
   Result := False;
 
@@ -4258,7 +4258,7 @@ var
 var
   Accept: Boolean;
   R: TRect;
-  Msg: TMsg;
+  Msg: Windows.TMsg;
   NewDockedSize: TDockedSize;
   I, J: Integer;
 begin
@@ -4928,7 +4928,7 @@ var
   end;
 var
   Accept: Boolean;
-  Msg: TMsg;
+  Msg: Windows.TMsg;
   R: TRect;
 begin
   if not Floating then Exit;
@@ -5409,7 +5409,9 @@ begin
         Note: Win9x can't use bitmaps <8x8 in size for pattern brushes }
       Brush := CreatePatternBrush(UseBmp.Handle);
       GetWindowOrgEx(DC, P);
-     {$IFDEF FPC}windelphi.{$ENDIF}SetBrushOrgEx(DC, DrawRect.Left - P.X, DrawRect.Top - P.Y, nil);
+
+      SetBrushOrgEx(DC, DrawRect.Left - P.X, DrawRect.Top - P.Y, nil);
+
       FillRect(DC, DrawRect, Brush);
       DeleteObject(Brush);
     end

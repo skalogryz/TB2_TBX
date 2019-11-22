@@ -41,7 +41,7 @@ uses
 {$ENDIF}
   Types,
   {$IFnDEF FPC} Windows, Messages, {$ELSE}
-  Windows, windelphi, LclIntf, LCLType, LCLStrConsts, Win32Int, InterfaceBase, LMessages,
+  Windows, LclIntf, LCLType, LCLStrConsts, Win32Int, InterfaceBase, LMessages,
   {$ENDIF}
   Graphics,
   Classes,

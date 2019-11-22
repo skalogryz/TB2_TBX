@@ -39,7 +39,8 @@ uses
   Types,   // System.Types (included for inline expansion)
   SysUtils,
   {$IFnDEF FPC} Windows, Messages, {$ELSE}
-  tb2Delphi, WinDelphi, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages,
+  Windows,
+  tb2Delphi, LclIntf, lclsupport, LCLType, LCLStrConsts, InterfaceBase, LMessages,
   {$ENDIF}
   Graphics,
   Controls,
@@ -297,7 +298,7 @@ type
 {$IFNDEF CLR}
 var
   LastAccObject: TTBCustomAccObject;  { last object in the linked list }
-  LastAccObjectCritSect: {$IFnDEF FPC}TRTLCriticalSection{$ELSE}LongWord{$ENDIF};
+  LastAccObjectCritSect: TRTLCriticalSection;
 
   NotifyWinEventInited: BOOL;
   NotifyWinEventFunc: procedure(event: DWORD; hwnd: HWND; idObject: Longint;
@@ -1390,6 +1391,7 @@ begin
 end;
 
 initialization
+  //{$ifdef fpc}System.{$endif}
   InitializeCriticalSection(LastAccObjectCritSect);
   if not IsLibrary then begin
     SaveInitProc := InitProc;

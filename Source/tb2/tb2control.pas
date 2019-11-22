@@ -11,7 +11,7 @@ uses
   // RTL headers
   Windows, Classes, SysUtils, Forms, Messages,
 {$IFDEF FPC}
-  WinDelphi, LCLType, LCLIntf, LMessages, LCLProc, Win32WSControls, Win32Int, Win32WSStdCtrls, win32proc,
+  LCLType, LCLIntf, LMessages, LCLProc, Win32WSControls, Win32Int, Win32WSStdCtrls, win32proc,
 {$ENDIF}
   Graphics, Controls, StdCtrls;
 

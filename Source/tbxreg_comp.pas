@@ -22,7 +22,7 @@ uses
   Windows, Messages,
   {$IFDEF JR_D6} DesignIntf, DesignEditors, VCLEditors, {$ELSE} DsgnIntf, {$ENDIF}
   {$ELSE}
-  Windows, windelphi, tb2Delphi, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages,
+  Windows, tb2Delphi, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages,
   PropEdits, ComponentEditors, LResources, GraphPropEdits,
   {$ENDIF}
   TBXStatusBars;

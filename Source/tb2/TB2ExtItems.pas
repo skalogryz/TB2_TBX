@@ -34,7 +34,7 @@ interface
 {$I TB2Ver.inc}
 
 uses {$IFDEF FPC} tb2Delphi,  {$ENDIF}
-  {$IFnDEF FPC} Windows, {$ELSE} Windows, windelphi, LclIntf, LCLType, LCLStrConsts, InterfaceBase, {$ENDIF}
+  {$IFnDEF FPC} Windows, {$ELSE} Windows, LclIntf, LCLType, LCLStrConsts, InterfaceBase, {$ENDIF}
   {$IFnDEF FPC} Messages, {$ELSE}  LMessages, {$ENDIF}
   SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   StdCtrls, CommCtrl, Menus, ActnList,
@@ -788,7 +788,7 @@ function TTBEditItemViewer.EditLoop(const CapHandle: HWND): Boolean;
     end;
 
   var
-    Msg: TMsg;
+    Msg: Windows.TMsg;
     IsKeypadDigit: Boolean;
     ScanCode: Byte;
     V: Integer;
@@ -796,7 +796,7 @@ function TTBEditItemViewer.EditLoop(const CapHandle: HWND): Boolean;
     try
       while ContinueLoop do begin
         { Examine the next message before popping it out of the queue }
-        if not PeekMessage(Msg, 0, 0, 0, PM_NOREMOVE) then begin
+        if not Windows.PeekMessage(Msg, 0, 0, 0, PM_NOREMOVE) then begin
           WaitMessage;
           Continue;
         end;
@@ -852,7 +852,7 @@ function TTBEditItemViewer.EditLoop(const CapHandle: HWND): Boolean;
             end;
         end;
         { Now pop the message out of the queue }
-        if not PeekMessage(Msg, 0, Msg.message, Msg.message, PM_REMOVE or PM_NOYIELD) then
+        if not Windows.PeekMessage(Msg, 0, Msg.message, Msg.message, PM_REMOVE or PM_NOYIELD) then
           Continue;
         if ((Msg.message >= WM_MOUSEFIRST) and (Msg.message <= WM_MOUSELAST)) and
            (Msg.hwnd = CapHandle) then

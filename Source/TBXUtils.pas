@@ -36,7 +36,7 @@ interface
 uses
   Windows, SysUtils, Controls, Forms, ImgList,
   {$IFnDEF FPC} Messages, {$ELSE}
-  Types, windelphi, tb2Delphi, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages,
+  Types, tb2Delphi, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages,
   {$ENDIF}
   Graphics,
   Classes;
@@ -510,7 +510,7 @@ begin
   end;
 
   SaveAlign := SetTextAlign(DC, TA_BOTTOM);
-  TextOutW(DC, X, Y, PChar(AText), Length(AText));
+  TextOutW(DC, X, Y, PWideChar(AText), Length(AText));
   SetTextAlign(DC, SaveAlign);
 
   { Underline }
@@ -889,14 +889,14 @@ end;
 
 { Drawing routines }
 
-(*{$IFDEF WIN64}
+{$IFDEF WIN64}
 function GetBGR(C: TColorRef): Cardinal;
 begin
   Result := ((C and $00FF0000) shr 16) or
              (C and $0000FF00) or
             ((C and $000000FF) shl 16);
 end;
-{$ELSE}*)
+{$ELSE}
 function GetBGR(C: TColorRef): Cardinal;
 asm
         MOV     ECX,EAX         // this function swaps R and B bytes in ABGR
@@ -906,7 +906,7 @@ asm
         SHL     EAX,16
         MOV     AX,CX
 end;
-{.$ENDIF}
+{$ENDIF}
 
 procedure SetPixelEx(DC: HDC; X, Y: Integer; C: TColorRef; Alpha: Longword = $FF);
 var

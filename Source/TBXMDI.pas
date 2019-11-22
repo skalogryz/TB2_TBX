@@ -42,7 +42,8 @@ uses
   SysUtils, Classes, Controls, Forms, Dialogs,
   Menus, TB2Item, TB2Toolbar,
   {$IFnDEF FPC} Windows, Messages, {$ELSE}
-  Messages, WinDelphi, tb2Delphi, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages,
+  Windows,
+  Messages, tb2Delphi, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages,
   {$ENDIF}
   Graphics,
   TBX;

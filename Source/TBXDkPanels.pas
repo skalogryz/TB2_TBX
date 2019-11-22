@@ -38,7 +38,7 @@ uses
   Controls, StdCtrls, ExtCtrls, Forms,
   TB2Dock, TB2Item, TBX, Menus, TBXThemes, ImgList,
   {$IFnDEF FPC} Windows, Messages, {$ELSE}
-  Windows, windelphi, tb2Delphi, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages,
+  Windows, tb2Delphi, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages,
   {$ENDIF}
   Graphics, Classes;
 
@@ -1895,7 +1895,7 @@ end;
 procedure TTBXDockablePanel.BeginDockedSizing(HitTest: Integer);
 var
   OrigPos, OldPos: TPoint;
-  Msg: TMsg;
+  Msg: Windows.TMsg;
   DockRect, DragRect, OrigDragRect, OldDragRect: TRect;
   NCSizes: TPoint;
   EdgeRect, OldEdgeRect: TRect;
@@ -2082,7 +2082,7 @@ var
   LeftRight, Smooth, CommitResizing: Boolean;
   DockSize, TotalSize, TotalMinSize, TotalMaxSize: Integer;
   OrigCursorPos, OldCursorPos: TPoint;
-  Msg: TMsg;
+  Msg: Windows.TMsg;
   EffectiveIndex: Integer;
   EffectivePanel: TTBXDockablePanel;
   PanelRect, DockRect, EdgeRect, OrigEdgeRect, OldEdgeRect: TRect;
@@ -4599,7 +4599,7 @@ end;
 
 procedure TTBXCustomPageScroller.BeginScrolling(HitTest: Integer);
 var
-  Msg: TMsg;
+  Msg: Windows.TMsg;
 begin
   if HitTest = HTSCROLLPREV then FScrollDirection := -1 else FScrollDirection := 1;
   try

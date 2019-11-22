@@ -46,7 +46,8 @@ uses
   SysUtils,
 
   {$IFnDEF FPC} Windows, Messages, {$ELSE}
-  Windows, windelphi, tb2Delphi, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages,
+  Windows, tb2Delphi, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages,
+  lclsupport,
   {$ENDIF}
   Graphics, Controls, Forms, Dialogs, StdCtrls, CommCtrl,
   Menus, ActnList, ImgList, TB2Anim, Classes, TB2Types;
@@ -5410,7 +5411,7 @@ begin
         is positioned on an even or odd Left or Top coordinate. }
 //      if {$IFDEF FPC}windelphi.{$ENDIF}GetWindowOrgEx(DrawToDC, WindowOrg) then
 //        {$IFDEF FPC}windelphi.{$ENDIF}SetBrushOrgEx(DrawToDC, -WindowOrg.X, -WindowOrg.Y, nil);
-      {$IFDEF FPC}windelphi.{$ENDIF}SetBrushOrgEx(DrawToDC, R1.Left and 1, R1.Top and 1, nil);
+      SetBrushOrgEx(DrawToDC, R1.Left and 1, R1.Top and 1, nil);
       DrawCanvas := DrawTo;
     end
     else begin
@@ -6456,7 +6457,7 @@ var
 
 var
   MouseDownOnMenu: Boolean;
-  Msg: TMsg;
+  Msg: Windows.TMsg;
   P: TPoint;
   Ctl: TControl;
   View: TTBView;
@@ -6491,7 +6492,7 @@ begin
     while ContinueLoop do begin
       TBUpdateAnimation;
       { Examine the next message before popping it out of the queue }
-      if not PeekMessage(Msg, 0, 0, 0, PM_NOREMOVE) then begin
+      if not Windows.PeekMessage(Msg, 0, 0, 0, PM_NOREMOVE) then begin
         { No message available; wait for one to arrive }
         if TBIsAnimationInProgress then
           { While animating, if no message arrives within 1 ms, loop back and
@@ -6504,7 +6505,7 @@ begin
             possible with a call to timeBeginPeriod, but we don't need it.)
             Note: On 2000/XP, timers and Sleep both have a resolution of 10-15
             ms by default. }
-           {$IFDEF FPC}WinDelphi.{$ENDIF} MsgWaitForMultipleObjects(0, {$IFNDEF CLR} THandle(nil^) {$ELSE} [] {$ENDIF},
+            MsgWaitForMultipleObjects(0, {$IFNDEF CLR} THandle(nil^) {$ELSE} [] {$ENDIF},
             False, 1, QS_ALLINPUT)
         else
           WaitMessage;
@@ -6540,7 +6541,7 @@ begin
         end;
       end;
       { Now pop the message out of the queue }
-      if not PeekMessage(Msg, 0, Msg.message, Msg.message, PM_REMOVE or PM_NOYIELD) then
+      if not Windows.PeekMessage(Msg, 0, Msg.message, Msg.message, PM_REMOVE or PM_NOYIELD) then
         Continue;
       case Msg.message of
         $4D:
@@ -6550,7 +6551,7 @@ begin
             is up, so swallow the message. }
           ;
         WM_CONTEXTMENU:
-          HandlePopupMenu(SmallPointToPoint(TSmallPoint(Msg.lParam)));
+          HandlePopupMenu(SmallPointToPoint(ToSmallPoint(Msg.lParam)));
         WM_KEYFIRST..WM_KEYLAST: begin
             Application.CancelHint;
             MouseIsDown := (GetKeyState(VK_LBUTTON) < 0) or

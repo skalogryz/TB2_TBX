@@ -31,7 +31,7 @@ interface
 
 uses
   {$IFnDEF FPC} Windows, Messages,  {$ELSE}
-  Windows, WinDelphi, TB2delphi, LclIntf, LCLType, LMessages,
+  Windows, TB2delphi, LclIntf, LCLType, LMessages,
   {$ENDIF}
   Graphics, TBXThemes, ImgList, TBXDefaultTheme;
 
@@ -182,7 +182,7 @@ begin
     DC := Canvas.Handle;
     Brush := CreatePatternBrush(StockPatternBitmap.Handle);
     GetWindowOrgEx(DC, Pt);
-   {$IFDEF FPC}windelphi.{$ENDIF}SetBrushOrgEx(DC, R.Left - Pt.X, R.Top - Pt.Y, nil);
+    SetBrushOrgEx(DC, R.Left - Pt.X, R.Top - Pt.Y, nil);
     Windows.FillRect(DC, R, Brush);
     DeleteObject(Brush);
   end
@@ -210,7 +210,7 @@ begin
   DC := Canvas.Handle;
   Brush := CreatePatternBrush(StockPatternBitmap.Handle);
   GetWindowOrgEx(DC, Pt);
- {$IFDEF FPC}windelphi.{$ENDIF}SetBrushOrgEx(DC, R.Left - Pt.X, R.Top - Pt.Y, nil);
+  SetBrushOrgEx(DC, R.Left - Pt.X, R.Top - Pt.Y, nil);
   Windows.FillRect(DC, R, Brush);
   DeleteObject(Brush);
 end;

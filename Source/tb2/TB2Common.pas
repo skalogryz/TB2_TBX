@@ -36,7 +36,7 @@ uses
   Types,
   SysUtils, StdCtrls,
   {$IFnDEF FPC} Windows, Messages, {$ELSE}
-  Windows, WinDelphi, LclIntf, LCLType, LCLStrConsts,
+  Windows, LclIntf, LCLType, LCLStrConsts,
   InterfaceBase, tb2Delphi, LMessages,
   {$ENDIF}
   Controls,
@@ -445,9 +445,9 @@ procedure ProcessPaintMessages;
 { Dispatches all pending WM_PAINT messages. In effect, this is like an
   'UpdateWindow' on all visible windows }
 var
-  Msg: TMsg;
+  Msg: Windows.TMsg;
 begin
-  while PeekMessage(Msg, 0, WM_PAINT, WM_PAINT, PM_NOREMOVE) do begin
+  while Windows.PeekMessage(Msg, 0, WM_PAINT, WM_PAINT, PM_NOREMOVE) do begin
     case Integer(GetMessage(Msg, 0, WM_PAINT, WM_PAINT)) of
       -1: Break; { if GetMessage failed }
       0: begin
@@ -821,6 +821,7 @@ var
   CaptionFont, SaveFont: HFONT;
   SaveBkMode: Integer;
   SaveTextColor: TColorRef;
+  R : TRect;
 begin
   if ARect.Right <= ARect.Left then
     Exit;
@@ -834,7 +835,8 @@ begin
       Flags := Flags or DC_ACTIVE;
     if GetSystemParametersInfoBool(SPI_GETGRADIENTCAPTIONS, False) then
       Flags := Flags or DC_GRADIENT;
-    DrawCaption(Wnd, DC, ARect, Flags);
+    R := ARect;
+    DrawCaption(Wnd, DC, R, Flags);
   end
   else begin
     FillBackground;
