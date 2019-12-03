@@ -46,8 +46,7 @@ uses
   SysUtils,
 
   {$IFnDEF FPC} Windows, Messages, {$ELSE}
-  Windows, tb2Delphi, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages,
-  lclsupport,
+  LclIntf, LCLType, LMessages, TBXLCLWinCompat, lclsupport, LCLProc,
   {$ENDIF}
   Graphics, Controls, Forms, Dialogs, StdCtrls, CommCtrl,
   Menus, ActnList, ImgList, TB2Anim, Classes, TB2Types;
@@ -2141,8 +2140,12 @@ begin
         Result.Update;
       end;
     end;
+    {$ifdef fpc}
+
+    {$else}
     CallNotifyWinEvent(EVENT_SYSTEM_MENUPOPUPSTART, Result.View.FWindow.Handle,
       OBJID_CLIENT, CHILDID_SELF);
+    {$endif}
     { Call NotifyFocusEvent now that the window is visible }
     if Assigned(Result.View.Selected) then
       Result.View.NotifyFocusEvent;
@@ -3721,6 +3724,9 @@ begin
   { Note: In a 64-bit build, object identifiers can come in either
     sign-extended or zero-extended from 32 to 64 bits. Clip to 32 bits here
     to ensure we accept both forms. }
+  {$ifdef fpc}
+  Result:=false;
+  {$else}
   if (ClipToLongint(Message.LParam) = Longint(OBJID_CLIENT)) and InitializeOleAcc then begin
     Message.Result := LresultFromObjectFunc(
       {$IFNDEF CLR} ITBAccessible {$ELSE} TypeOf(ITBAccessible).GUID {$ENDIF},
@@ -3729,6 +3735,7 @@ begin
   end
   else
     Result := False;
+  {$endif}
 end;
 
 procedure TTBView.UpdateCurParentItem;
@@ -4273,6 +4280,8 @@ procedure TTBView.NotifyFocusEvent;
 var
   I, ChildID, J: Integer;
 begin
+  {$ifdef fpc}
+  {$else}
   { Note: We don't notify about windows not yet shown (e.g. a popup menu that
     is still initializing) because that would probably confuse screen readers.
     Also allocating a window handle at this point *might* not be a good idea. }
@@ -4311,6 +4320,7 @@ begin
       CallNotifyWinEvent(EVENT_OBJECT_FOCUS, FWindow.Handle, OBJID_CLIENT, ChildID);
     end;
   end;
+  {$endif}
 end;
 
 procedure TTBView.SetSelected(Value: TTBItemViewer);
@@ -6169,7 +6179,9 @@ begin
   CallLockSetForegroundWindow(True);
   SetCapture(FWnd);
   {$IFDEF FPC}LclIntf.{$ENDIF}SetCursor(LoadCursor(0, IDC_ARROW));
+  {$ifndef fpc}
   CallNotifyWinEvent(EVENT_SYSTEM_MENUSTART, FWnd, OBJID_CLIENT, CHILDID_SELF);
+  {$endif}
   FInited := True;
 end;
 
@@ -6179,8 +6191,10 @@ begin
   if FWnd <> 0 then begin
     if GetCapture = FWnd then
       ReleaseCapture;
+    {$ifndef fpc}
     if FInited then
       CallNotifyWinEvent(EVENT_SYSTEM_MENUEND, FWnd, OBJID_CLIENT, CHILDID_SELF);
+    {$endif}
     if FCreatedWnd then
       {$IFDEF FPC}LclIntf.{$ELSE}{$IFDEF ALLOCHWND_CLASSES}Classes.{$ENDIF}{$ENDIF} DeallocateHWnd(FWnd);
   end;
@@ -6207,6 +6221,11 @@ end;
 
 procedure TTBModalHandler.Loop(const RootView: TTBView;
   const AMouseDown, AExecuteSelected, AFromMSAA, TrackRightButton: Boolean);
+{$ifdef fpc}
+begin
+  //todo: TTBModalHandler.Loop
+end;
+{$else}
 const
   CancelLoop: Boolean = False;
 var
@@ -6719,7 +6738,7 @@ begin
     RemoveMessages($4D, $4D);
   end;
 end;
-
+{$endif}
 
 { TTBPopupView }
 
@@ -6862,8 +6881,10 @@ begin
   { Cleanly destroy any timers before the window handle is destroyed }
   if Assigned(FView) then
     FView.StopAllTimers;
+  {$ifndef fpc}
   CallNotifyWinEvent(EVENT_SYSTEM_MENUPOPUPEND, WindowHandle, OBJID_CLIENT,
     CHILDID_SELF);
+  {$endif}
   inherited;
 end;
 

@@ -8,20 +8,13 @@ unit tbx_d7;
 interface
 
 uses
- TBX, TBXColorConsts, TBXConsts, TBXDkPanels, TBXExtItems, TBXLists, TBXMDI, 
- TBXStatusBars, TBXStrEdit, TBXSwitcher, TBXThemes, TBXToolPals, TBXUtils, 
- TBXUxThemes, TBXAluminumTheme, TBXDefaultTheme, TBXOfficeXPTheme, 
- TBXStripesTheme, TBXReg_comp, TBXrmkThemes, TBXOffice2003Theme, 
- TBXOffice2007Theme, TBXPanel, TBXWhidbeyTheme, TB2Acc, TB2Anim, TB2Common, 
- TB2Consts, TB2Delphi, TB2Dock, TB2ExtItems, TB2Hook, TB2Item, TB2MDI, TB2MRU, 
- TB2OleMarshal, TB2Reg_Comp, TB2Toolbar, TB2ToolWindow, TB2Types, Windelphi, 
- TBXOutLook2007Theme, TBXProfessionalTheme, rmkThemes, TBXAthenTheme, 
- TBXDamsokaTheme, TBXDreamTheme, TBXEchoTheme, TBXEos9Theme, TBXEosTheme, 
- TBXMonaiXPTheme, TBXNewOfficeAdaptiveTheme, TBXNewOfficeTheme, 
- TBXNexos2Theme, TBXNexos3Theme, TBXNexos4Theme, TBXNexos5Theme, 
- TBXNexosXTheme, TBXOffice11AdaptiveTheme, TBXOffice11XPTheme, 
- TBXOfficeCTheme, TBXOfficeKTheme, TBXRomaTheme, TBXSentimoXTheme, 
- TBXTristanTheme, TBXXitoTheme, LazarusPackageIntf;
+  TBX, TBXColorConsts, TBXConsts, TBXDkPanels, TBXExtItems, TBXLists, TBXMDI, 
+  TBXStatusBars, TBXStrEdit, TBXSwitcher, TBXThemes, TBXToolPals, TBXUtils, 
+  TBXUxThemes, TBXReg_comp, TBXPanel, TB2Acc, TB2Anim, TB2Common, TB2Consts, 
+  TB2Delphi, TB2Dock, TB2ExtItems, TB2Hook, TB2Item, TB2MDI, TB2MRU, 
+  TB2OleMarshal, TB2Reg_Comp, TB2Toolbar, TB2ToolWindow, TB2Types, 
+  TBXAluminumTheme, TBXDefaultTheme, TBXOfficeXPTheme, lclsupport, 
+  TBXLCLWinCompat, LazarusPackageIntf;
 
 implementation
 

@@ -42,7 +42,7 @@ uses
   SysUtils, Controls, ImgList, Forms,
   TB2Dock, TB2Toolbar, TB2ToolWindow, TB2Anim, TBXUtils, TB2Item, TBXThemes,
   {$IFnDEF FPC} Windows, Messages, {$ELSE}
-  Windows, tb2Delphi, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages,
+  Types, LclIntf, LCLType, LMessages, TBXLCLWinCompat,
   {$ENDIF}
   Graphics,
   Classes;

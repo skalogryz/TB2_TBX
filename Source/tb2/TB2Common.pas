@@ -36,8 +36,7 @@ uses
   Types,
   SysUtils, StdCtrls,
   {$IFnDEF FPC} Windows, Messages, {$ELSE}
-  Windows, LclIntf, LCLType, LCLStrConsts,
-  InterfaceBase, tb2Delphi, LMessages,
+  LclIntf, LCLType, LMessages, TBXLCLWinCompat,
   {$ENDIF}
   Controls,
   Classes,
@@ -444,6 +443,11 @@ end;
 procedure ProcessPaintMessages;
 { Dispatches all pending WM_PAINT messages. In effect, this is like an
   'UpdateWindow' on all visible windows }
+{$ifdef fpc}
+begin
+  //todo: ProcessPaintMessages
+end;
+{$else}
 var
   Msg: Windows.TMsg;
 begin
@@ -459,9 +463,15 @@ begin
     DispatchMessage(Msg);
   end;
 end;
+{$endif}
 
 procedure RemoveMessages(const AMin, AMax: Integer);
 { Removes any messages with the specified ID from the queue }
+{$ifdef fpc}
+begin
+  //todo: RemoveMessages
+end;
+{$else}
 var
   Msg: TMsg;
 begin
@@ -473,6 +483,7 @@ begin
     end;
   end;
 end;
+{$endif}
 
 procedure SelectNCUpdateRgn(Wnd: HWND; DC: HDC; Rgn: HRGN);
 var
@@ -523,6 +534,14 @@ end;
 
 const
   DefaultMenuShowDelay = 400;
+
+{$ifdef fpc}
+function GetMenuShowDelay: Integer;
+begin
+  Result:=DefaultMenuShowDelay;
+end;
+
+{$else}
 {$IFNDEF CLR}
 var
   RegMenuShowDelay: Integer;
@@ -577,6 +596,7 @@ begin
     Result := DefaultMenuShowDelay;
 end;
 {$ENDIF}
+{$endif}
 
 function AreFlatMenusEnabled: Boolean;
 { Returns True if "flat menus" are enabled. Always returns False on pre-XP
@@ -724,6 +744,12 @@ GradientFillFunc: function(DC: HDC; var Vertex: TNewTriVertex;
 {$ENDIF}
 
 procedure InitGradientFillFunc;
+{$ifdef fpc}
+begin
+  //todo: InitGradientFillFunc
+  // no special GradientFill function
+end;
+{$else}
 {$IFNDEF CLR}
 var
   M: HMODULE;
@@ -743,6 +769,7 @@ begin
     {$ENDIF}
   end;
 end;
+{$endif}
 
 function IsFillRectWithGradientAvailable: Boolean;
 begin
@@ -879,7 +906,7 @@ begin
     if WndDC <> 0 then begin
       try
         { Only repaint the area that intersects the clipping rectangle }
-        if (GetClipBox(WndDC, {$IFDEF FPC}@{$ENDIF}ClipRect) <> Windows.ERROR) and
+        if (GetClipBox(WndDC, {$IFDEF FPC}@{$ENDIF}ClipRect) <> 0) and
            IntersectRect(R, ClientRect, ClipRect) then begin
           Bmp := CreateCompatibleBitmap(WndDC, R.Right - R.Left, R.Bottom - R.Top);
           if Bmp <> 0 then begin
@@ -945,6 +972,10 @@ var
   MultiMonApisAvailable: Boolean;
 
 procedure InitMultiMonApis;
+{$ifdef fpc}
+begin
+end;
+{$else}
 var
   User32Handle: THandle;
 begin
@@ -958,6 +989,7 @@ begin
     Assigned(MultiMonApis.MonitorFromWindow) and
     Assigned(MultiMonApis.GetMonitorInfo);
 end;
+{$endif}
 {$ENDIF}
 
 function UsingMultipleMonitors: Boolean;
@@ -1033,7 +1065,11 @@ begin
   end;
   Result := GetRectOfPrimaryMonitor(WorkArea);
 end;
-
+{$ifdef fpc}
+procedure InitTrackMouseEvent;
+begin
+end;
+{$else}
 {$IFNDEF CLR}
 var
   TrackMouseEventInited: BOOL;
@@ -1064,8 +1100,14 @@ procedure InitTrackMouseEvent;
 begin
 end;
 {$ENDIF}
+{$endif}
 
 function CallTrackMouseEvent(const Wnd: HWND; const Flags: DWORD): Boolean;
+{$ifdef fpc}
+begin
+  Result := false;
+end;
+{$else}
 var
   Track: TTrackMouseEvent;
 begin
@@ -1087,6 +1129,7 @@ begin
   Result := TrackMouseEvent(Track);
   {$ENDIF}
 end;
+{$endif}
 
 {$IFNDEF CLR}
 var
@@ -1421,6 +1464,12 @@ function NeedToPlaySound(const Alias: String): Boolean;
   the first call to PlaySound.
   Windows Explorer actually uses this same technique when playing sounds for
   the Start menu. }
+{$ifdef fpc}
+begin
+  //todo: NeedToPlaySound
+  Result:=false;
+end;
+{$else}
 var
   KeyName: String;
   K: HKEY;
@@ -1464,8 +1513,14 @@ begin
     end;
   end;
 end;
+{$endif}
 
 procedure PlaySystemSound(const Alias: String);
+{$ifdef fpc}
+begin
+  //todo: PlaySystemSound
+end;
+{$else}
 const
   SND_SYSTEM = $00200000;
 var
@@ -1478,6 +1533,7 @@ begin
     Flags := Flags or SND_SYSTEM;
   PlaySound({$IFNDEF CLR}PChar{$ENDIF}(Alias), 0, Flags);
 end;
+{$endif}
 
 function Max(A, B: Integer): Integer;
 begin
@@ -1546,6 +1602,12 @@ end;
 function GetInputLocaleCodePage: UINT;
 { Returns the code page identifier of the active input locale, or CP_ACP if
   for some unknown reason it couldn't be determined. }
+{$ifdef fpc}
+begin
+  //todo: GetInputLocaleCodePage
+  Result := CP_ACP;
+end;
+{$else}
 var
   {$IFNDEF CLR}
   Buf: array[0..15] of Char;
@@ -1575,6 +1637,7 @@ begin
   else
     Result := CP_ACP;
 end;
+{$endif}
 
 function GetMessagePosAsPoint: TPoint;
 var
@@ -1668,9 +1731,12 @@ end;
 
 initialization
   InitGradientFillFunc;
+  {$ifdef fpc}
+  {$else}
   {$IFNDEF CLR}
   InitMultiMonApis;
   LockSetForegroundWindowFunc := GetProcAddress(GetModuleHandle(user32),
     'LockSetForegroundWindow');
   {$ENDIF}
+  {$endif}
 end.

@@ -37,8 +37,7 @@ interface
 uses
   Classes, Forms,
   {$IFnDEF FPC} Windows, Messages, {$ELSE}
-  Windows,
-  Messages, tb2Delphi, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages,
+  Types, Controls, LclIntf, LCLType, LMessages, TBXLCLWinCompat,
   {$ENDIF}
   Graphics,
   ImgList;
@@ -478,7 +477,8 @@ function GetTBXDragHandleSize(const ToolbarInfo: TTBXToolbarInfo): Integer;
 implementation
 
 uses
-  SysUtils, TypInfo, TB2Common, TBXConsts, TBXUtils{, TBXUxThemes} {$IFDEF JR_D9}, Types {$ENDIF};
+  SysUtils, TypInfo, TB2Common, TBXConsts, TBXUtils{, TBXUxThemes}
+  {$ifndef fpc}{$IFDEF JR_D9}, Types {$ENDIF}{$endif};
 
 const
   SPI_GETFLATMENU = $1022;

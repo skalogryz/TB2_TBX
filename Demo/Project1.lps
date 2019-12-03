@@ -4,7 +4,7 @@
     <PathDelim Value="\"/>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="139">
+    <Units Count="158">
       <Unit0>
         <Filename Value="Project1.pas"/>
         <IsPartOfProject Value="True"/>
@@ -19,7 +19,6 @@
         <ComponentName Value="Form1"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
         <TopLine Value="8"/>
         <CursorPos Y="22"/>
         <UsageCount Value="224"/>
@@ -35,7 +34,7 @@
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="8" Y="23"/>
-        <UsageCount Value="104"/>
+        <UsageCount Value="105"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit2>
       <Unit3>
@@ -48,7 +47,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="202"/>
         <CursorPos X="22" Y="210"/>
-        <UsageCount Value="65"/>
+        <UsageCount Value="66"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit3>
       <Unit4>
@@ -426,66 +425,74 @@
       </Unit49>
       <Unit50>
         <Filename Value="..\Source\TBX.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="2581"/>
-        <CursorPos Y="2594"/>
+        <EditorIndex Value="17"/>
+        <TopLine Value="35"/>
+        <CursorPos X="12" Y="45"/>
         <UsageCount Value="93"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit50>
       <Unit51>
         <Filename Value="..\Source\rmkThemes\TBXrmkThemes.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="529"/>
-        <CursorPos X="3" Y="537"/>
+        <EditorIndex Value="29"/>
+        <TopLine Value="14"/>
+        <CursorPos X="12" Y="24"/>
         <UsageCount Value="57"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit51>
       <Unit52>
         <Filename Value="..\Source\TBXDkPanels.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="2995"/>
-        <CursorPos X="49" Y="3008"/>
+        <EditorIndex Value="52"/>
+        <TopLine Value="4592"/>
+        <CursorPos X="16" Y="4602"/>
         <UsageCount Value="75"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit52>
       <Unit53>
         <Filename Value="..\Source\TBXUtils.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="645"/>
-        <CursorPos X="61" Y="660"/>
+        <EditorIndex Value="15"/>
+        <TopLine Value="893"/>
+        <CursorPos X="2" Y="909"/>
         <UsageCount Value="25"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit53>
       <Unit54>
         <Filename Value="..\Source\TBXExtItems.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="37"/>
-        <CursorPos Y="89"/>
+        <EditorIndex Value="20"/>
+        <TopLine Value="33"/>
+        <CursorPos X="19" Y="43"/>
         <UsageCount Value="12"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit54>
       <Unit55>
         <Filename Value="..\Source\TBXLists.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1078"/>
-        <CursorPos Y="1099"/>
+        <EditorIndex Value="19"/>
+        <TopLine Value="31"/>
+        <CursorPos X="12" Y="41"/>
         <UsageCount Value="22"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit55>
       <Unit56>
         <Filename Value="..\Source\Themes\TBXDefaultTheme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1068"/>
-        <CursorPos X="28" Y="1047"/>
+        <EditorIndex Value="22"/>
+        <TopLine Value="30"/>
+        <CursorPos X="12" Y="40"/>
         <UsageCount Value="24"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit56>
       <Unit57>
         <Filename Value="..\Source\Themes\TBXOffice2003Theme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1101"/>
-        <CursorPos X="31" Y="1080"/>
+        <EditorIndex Value="25"/>
+        <TopLine Value="44"/>
+        <CursorPos X="12" Y="54"/>
         <UsageCount Value="41"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit57>
       <Unit58>
@@ -507,34 +514,38 @@
       </Unit59>
       <Unit60>
         <Filename Value="..\Source\Themes\TBXOffice2007Theme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1425"/>
-        <CursorPos X="31" Y="1416"/>
+        <EditorIndex Value="26"/>
+        <TopLine Value="34"/>
+        <CursorPos X="12" Y="44"/>
         <UsageCount Value="29"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit60>
       <Unit61>
         <Filename Value="..\Source\Themes\TBXWhidbeyTheme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1137"/>
-        <CursorPos X="53" Y="1163"/>
+        <EditorIndex Value="28"/>
+        <TopLine Value="13"/>
+        <CursorPos X="12" Y="23"/>
         <UsageCount Value="14"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit61>
       <Unit62>
         <Filename Value="..\Source\tb2\TB2Common.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="870"/>
-        <CursorPos Y="890"/>
+        <EditorIndex Value="61"/>
+        <TopLine Value="850"/>
+        <CursorPos X="27" Y="839"/>
         <UsageCount Value="31"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit62>
       <Unit63>
         <Filename Value="..\Source\tb2\TB2Item.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1558"/>
-        <CursorPos X="68" Y="1569"/>
+        <EditorIndex Value="12"/>
+        <TopLine Value="39"/>
+        <CursorPos X="6" Y="50"/>
         <UsageCount Value="29"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit63>
       <Unit64>
@@ -547,10 +558,11 @@
       </Unit64>
       <Unit65>
         <Filename Value="..\Source\TBXStatusBars.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="955"/>
-        <CursorPos Y="964"/>
+        <EditorIndex Value="54"/>
+        <TopLine Value="31"/>
+        <CursorPos X="12" Y="41"/>
         <UsageCount Value="24"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit65>
       <Unit66>
@@ -571,19 +583,21 @@
       </Unit67>
       <Unit68>
         <Filename Value="..\Source\tb2\TB2Dock.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="3486"/>
-        <CursorPos X="73" Y="3504"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="5402"/>
+        <CursorPos X="6" Y="5415"/>
         <UsageCount Value="29"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit68>
       <Unit69>
         <Filename Value="..\Source\tb2\tb2control.pas"/>
         <UnitName Value="tb2Control"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="14"/>
-        <CursorPos X="57" Y="25"/>
-        <UsageCount Value="7"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="4"/>
+        <CursorPos X="3" Y="14"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit69>
       <Unit70>
@@ -604,32 +618,39 @@
       </Unit71>
       <Unit72>
         <Filename Value="..\Source\tb2\TB2Acc.pas"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="1"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="34"/>
+        <CursorPos X="66" Y="47"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit72>
       <Unit73>
         <Filename Value="..\Source\TBXPanel.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="422"/>
-        <CursorPos Y="444"/>
+        <EditorIndex Value="9"/>
+        <TopLine Value="2"/>
+        <CursorPos X="12" Y="12"/>
         <UsageCount Value="26"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit73>
       <Unit74>
         <Filename Value="..\Source\tb2\TB2Anim.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="296"/>
-        <CursorPos X="43" Y="315"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="309"/>
+        <CursorPos X="5" Y="326"/>
         <UsageCount Value="11"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit74>
       <Unit75>
         <Filename Value="..\Source\tb2\TB2Toolbar.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="926"/>
-        <CursorPos Y="937"/>
+        <EditorIndex Value="13"/>
+        <TopLine Value="33"/>
+        <CursorPos X="12" Y="42"/>
         <UsageCount Value="16"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit75>
       <Unit76>
@@ -685,34 +706,38 @@
       </Unit82>
       <Unit83>
         <Filename Value="..\Source\TBXThemes.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="37"/>
-        <CursorPos X="60" Y="53"/>
+        <EditorIndex Value="16"/>
+        <TopLine Value="31"/>
+        <CursorPos X="11" Y="40"/>
         <UsageCount Value="31"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit83>
       <Unit84>
         <Filename Value="..\Source\TBXToolPals.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="763"/>
-        <CursorPos X="125" Y="767"/>
+        <EditorIndex Value="57"/>
+        <TopLine Value="27"/>
+        <CursorPos X="13" Y="37"/>
         <UsageCount Value="22"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit84>
       <Unit85>
         <Filename Value="..\Source\Themes\TBXOutLook2007Theme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1034"/>
-        <CursorPos X="32" Y="1012"/>
+        <EditorIndex Value="27"/>
+        <TopLine Value="37"/>
+        <CursorPos X="12" Y="47"/>
         <UsageCount Value="23"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit85>
       <Unit86>
         <Filename Value="..\Source\TBXSwitcher.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="71"/>
-        <CursorPos X="3" Y="161"/>
+        <EditorIndex Value="56"/>
+        <TopLine Value="30"/>
+        <CursorPos X="12" Y="40"/>
         <UsageCount Value="10"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit86>
       <Unit87>
@@ -763,18 +788,20 @@
       </Unit92>
       <Unit93>
         <Filename Value="..\Source\Themes\TBXAluminumTheme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1012"/>
-        <CursorPos X="85" Y="1023"/>
+        <EditorIndex Value="23"/>
+        <TopLine Value="30"/>
+        <CursorPos X="12" Y="39"/>
         <UsageCount Value="26"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit93>
       <Unit94>
         <Filename Value="..\Source\tb2\TB2ExtItems.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="98"/>
-        <CursorPos X="40" Y="105"/>
+        <EditorIndex Value="18"/>
+        <TopLine Value="846"/>
+        <CursorPos X="24" Y="855"/>
         <UsageCount Value="14"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit94>
       <Unit95>
@@ -823,58 +850,65 @@
       </Unit100>
       <Unit101>
         <Filename Value="..\Source\rmkThemes\TBXAthenTheme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1204"/>
-        <CursorPos X="30" Y="1219"/>
+        <EditorIndex Value="30"/>
+        <TopLine Value="25"/>
+        <CursorPos X="12" Y="34"/>
         <UsageCount Value="24"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit101>
       <Unit102>
         <Filename Value="..\Source\rmkThemes\TBXDamsokaTheme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1439"/>
-        <CursorPos X="99" Y="1444"/>
+        <EditorIndex Value="31"/>
+        <TopLine Value="25"/>
+        <CursorPos X="12" Y="34"/>
         <UsageCount Value="25"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit102>
       <Unit103>
         <Filename Value="..\Source\rmkThemes\TBXDreamTheme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1373"/>
-        <CursorPos X="100" Y="1378"/>
+        <EditorIndex Value="32"/>
+        <TopLine Value="25"/>
+        <CursorPos X="12" Y="34"/>
         <UsageCount Value="25"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit103>
       <Unit104>
         <Filename Value="..\Source\rmkThemes\TBXEchoTheme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1776"/>
-        <CursorPos Y="1787"/>
+        <EditorIndex Value="33"/>
+        <TopLine Value="24"/>
+        <CursorPos X="12" Y="34"/>
         <UsageCount Value="25"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit104>
       <Unit105>
         <Filename Value="..\Source\rmkThemes\TBXOffice11XPTheme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1143"/>
-        <CursorPos X="99" Y="1153"/>
+        <EditorIndex Value="45"/>
+        <TopLine Value="25"/>
+        <CursorPos X="12" Y="34"/>
         <UsageCount Value="24"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit105>
       <Unit106>
         <Filename Value="..\Source\rmkThemes\TBXEos9Theme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1074"/>
-        <CursorPos X="31" Y="1091"/>
+        <EditorIndex Value="34"/>
+        <TopLine Value="25"/>
+        <CursorPos X="12" Y="34"/>
         <UsageCount Value="23"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit106>
       <Unit107>
         <Filename Value="..\Source\rmkThemes\TBXXitoTheme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1253"/>
-        <CursorPos X="97" Y="1266"/>
+        <EditorIndex Value="51"/>
+        <TopLine Value="25"/>
+        <CursorPos X="12" Y="34"/>
         <UsageCount Value="24"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit107>
       <Unit108>
@@ -893,10 +927,11 @@
       </Unit109>
       <Unit110>
         <Filename Value="..\Source\rmkThemes\TBXMonaiXPTheme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="818"/>
-        <CursorPos X="67" Y="835"/>
+        <EditorIndex Value="36"/>
+        <TopLine Value="210"/>
+        <CursorPos X="3" Y="218"/>
         <UsageCount Value="26"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit110>
       <Unit111>
@@ -910,18 +945,20 @@
       </Unit111>
       <Unit112>
         <Filename Value="..\Source\Themes\TBXStripesTheme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="794"/>
-        <CursorPos X="40" Y="803"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="148"/>
+        <CursorPos X="5" Y="158"/>
         <UsageCount Value="26"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit112>
       <Unit113>
         <Filename Value="..\Source\rmkThemes\TBXRomaTheme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="840"/>
-        <CursorPos X="87" Y="857"/>
+        <EditorIndex Value="48"/>
+        <TopLine Value="205"/>
+        <CursorPos X="3" Y="213"/>
         <UsageCount Value="24"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit113>
       <Unit114>
@@ -934,106 +971,119 @@
       </Unit114>
       <Unit115>
         <Filename Value="..\Source\rmkThemes\TBXEosTheme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1420"/>
-        <CursorPos X="36" Y="1422"/>
+        <EditorIndex Value="35"/>
+        <TopLine Value="25"/>
+        <CursorPos X="12" Y="34"/>
         <UsageCount Value="23"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit115>
       <Unit116>
         <Filename Value="..\Source\rmkThemes\TBXNewOfficeAdaptiveTheme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1103"/>
-        <CursorPos X="69" Y="1113"/>
+        <EditorIndex Value="37"/>
+        <TopLine Value="25"/>
+        <CursorPos X="12" Y="34"/>
         <UsageCount Value="24"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit116>
       <Unit117>
         <Filename Value="..\Source\rmkThemes\TBXNewOfficeTheme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1904"/>
-        <CursorPos X="49" Y="1867"/>
+        <EditorIndex Value="38"/>
+        <TopLine Value="24"/>
+        <CursorPos X="12" Y="34"/>
         <UsageCount Value="25"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit117>
       <Unit118>
         <Filename Value="..\Source\rmkThemes\TBXNexos2Theme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="767"/>
-        <CursorPos Y="779"/>
+        <EditorIndex Value="39"/>
+        <TopLine Value="25"/>
+        <CursorPos X="12" Y="34"/>
         <UsageCount Value="25"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit118>
       <Unit119>
         <Filename Value="..\Source\rmkThemes\TBXNexos3Theme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="651"/>
-        <CursorPos Y="655"/>
+        <EditorIndex Value="40"/>
+        <TopLine Value="25"/>
+        <CursorPos X="12" Y="34"/>
         <UsageCount Value="26"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit119>
       <Unit120>
         <Filename Value="..\Source\rmkThemes\TBXNexos4Theme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="672"/>
-        <CursorPos Y="686"/>
+        <EditorIndex Value="41"/>
+        <TopLine Value="25"/>
+        <CursorPos X="12" Y="34"/>
         <UsageCount Value="24"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit120>
       <Unit121>
         <Filename Value="..\Source\rmkThemes\TBXNexos5Theme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="608"/>
-        <CursorPos Y="628"/>
+        <EditorIndex Value="42"/>
+        <TopLine Value="25"/>
+        <CursorPos X="12" Y="34"/>
         <UsageCount Value="24"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit121>
       <Unit122>
         <Filename Value="..\Source\rmkThemes\TBXNexosXTheme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="682"/>
-        <CursorPos X="7" Y="696"/>
+        <EditorIndex Value="43"/>
+        <TopLine Value="25"/>
+        <CursorPos X="12" Y="34"/>
         <UsageCount Value="24"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit122>
       <Unit123>
         <Filename Value="..\Source\rmkThemes\TBXOffice11AdaptiveTheme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="479"/>
-        <CursorPos X="113" Y="489"/>
+        <EditorIndex Value="44"/>
+        <TopLine Value="25"/>
+        <CursorPos X="12" Y="34"/>
         <UsageCount Value="24"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit123>
       <Unit124>
         <Filename Value="..\Source\rmkThemes\TBXOfficeCTheme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1306"/>
-        <CursorPos X="19" Y="1318"/>
+        <EditorIndex Value="46"/>
+        <TopLine Value="25"/>
+        <CursorPos X="12" Y="34"/>
         <UsageCount Value="24"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit124>
       <Unit125>
         <Filename Value="..\Source\rmkThemes\TBXOfficeKTheme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1072"/>
-        <CursorPos X="91" Y="1089"/>
+        <EditorIndex Value="47"/>
+        <TopLine Value="25"/>
+        <CursorPos X="12" Y="34"/>
         <UsageCount Value="24"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit125>
       <Unit126>
         <Filename Value="..\Source\rmkThemes\TBXSentimoXTheme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1346"/>
-        <CursorPos X="85" Y="1367"/>
+        <EditorIndex Value="49"/>
+        <TopLine Value="25"/>
+        <CursorPos X="12" Y="34"/>
         <UsageCount Value="24"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit126>
       <Unit127>
         <Filename Value="..\Source\rmkThemes\TBXTristanTheme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1241"/>
-        <CursorPos X="113" Y="1258"/>
+        <EditorIndex Value="50"/>
+        <TopLine Value="25"/>
+        <CursorPos X="12" Y="34"/>
         <UsageCount Value="24"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit127>
       <Unit128>
@@ -1105,10 +1155,14 @@
       </Unit136>
       <Unit137>
         <Filename Value="..\Source\Themes\TBXOfficeXPTheme.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="806"/>
-        <CursorPos X="85" Y="824"/>
+        <EditorIndex Value="24"/>
+        <TopLine Value="31"/>
+        <CursorPos X="11" Y="40"/>
         <UsageCount Value="10"/>
+        <Bookmarks Count="1">
+          <Item0 X="26" Y="611" ID="2"/>
+        </Bookmarks>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit137>
       <Unit138>
@@ -1118,8 +1172,285 @@
         <CursorPos Y="958"/>
         <UsageCount Value="11"/>
       </Unit138>
+      <Unit139>
+        <Filename Value="C:\lazarus\lcl\interfaces\win32\win32int.pp"/>
+        <UnitName Value="Win32Int"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="121"/>
+        <CursorPos Y="121"/>
+        <UsageCount Value="10"/>
+      </Unit139>
+      <Unit140>
+        <Filename Value="C:\lazarus\fpc\3.0.4\source\rtl\win\wininc\redef.inc"/>
+        <EditorIndex Value="64"/>
+        <TopLine Value="536"/>
+        <CursorPos X="10" Y="545"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit140>
+      <Unit141>
+        <Filename Value="C:\lazarus\fpc\3.0.4\source\rtl\win\wininc\func.inc"/>
+        <EditorIndex Value="63"/>
+        <TopLine Value="655"/>
+        <CursorPos X="10" Y="665"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit141>
+      <Unit142>
+        <Filename Value="..\Source\tb2\TB2Hook.pas"/>
+        <EditorIndex Value="62"/>
+        <TopLine Value="25"/>
+        <CursorPos X="12" Y="35"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit142>
+      <Unit143>
+        <Filename Value="C:\lazarus\fpc\3.0.4\source\rtl\win\sysosh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="23"/>
+        <CursorPos X="3" Y="33"/>
+        <UsageCount Value="10"/>
+      </Unit143>
+      <Unit144>
+        <Filename Value="C:\lazarus\fpc\3.0.4\source\rtl\inc\threadh.inc"/>
+        <EditorIndex Value="60"/>
+        <TopLine Value="153"/>
+        <CursorPos Y="171"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit144>
+      <Unit145>
+        <Filename Value="..\Source\tb2\fpcsupport.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="9"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit145>
+      <Unit146>
+        <Filename Value="..\Source\tb2\tb2delphi.pas"/>
+        <UnitName Value="TB2Delphi"/>
+        <EditorIndex Value="5"/>
+        <CursorPos X="6" Y="4"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit146>
+      <Unit147>
+        <Filename Value="C:\lazarus\lcl\lmessages.pp"/>
+        <UnitName Value="LMessages"/>
+        <EditorIndex Value="11"/>
+        <TopLine Value="11"/>
+        <CursorPos Y="11"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit147>
+      <Unit148>
+        <Filename Value="C:\lazarus\lcl\lcltype.pp"/>
+        <UnitName Value="LCLType"/>
+        <EditorIndex Value="59"/>
+        <TopLine Value="2631"/>
+        <CursorPos X="11" Y="2640"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit148>
+      <Unit149>
+        <Filename Value="C:\lazarus\fpc\3.0.4\source\rtl\objpas\classes\classesh.inc"/>
+        <EditorIndex Value="58"/>
+        <TopLine Value="27"/>
+        <CursorPos X="4" Y="36"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit149>
+      <Unit150>
+        <Filename Value="..\Source\tb2\TB2ToolWindow.pas"/>
+        <EditorIndex Value="14"/>
+        <TopLine Value="27"/>
+        <CursorPos X="23" Y="37"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit150>
+      <Unit151>
+        <Filename Value="..\Source\tb2\TB2MRU.pas"/>
+        <EditorIndex Value="21"/>
+        <TopLine Value="27"/>
+        <CursorPos X="14" Y="37"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit151>
+      <Unit152>
+        <Filename Value="..\Source\TBXMDI.pas"/>
+        <EditorIndex Value="53"/>
+        <TopLine Value="34"/>
+        <CursorPos X="11" Y="45"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit152>
+      <Unit153>
+        <Filename Value="..\Source\TBXStrEdit.pas"/>
+        <EditorIndex Value="55"/>
+        <TopLine Value="26"/>
+        <CursorPos X="53" Y="36"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit153>
+      <Unit154>
+        <Filename Value="C:\lazarus\fpc\3.0.4\source\packages\winunits-base\src\winspool.pp"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="31"/>
+        <CursorPos Y="31"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit154>
+      <Unit155>
+        <Filename Value="..\Source\tbxreg_comp.pas"/>
+        <UnitName Value="TBXReg_comp"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="15"/>
+        <CursorPos X="12" Y="25"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit155>
+      <Unit156>
+        <Filename Value="..\Source\tb2\TB2MDI.pas"/>
+        <EditorIndex Value="10"/>
+        <TopLine Value="31"/>
+        <CursorPos X="99" Y="35"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit156>
+      <Unit157>
+        <Filename Value="..\Source\tb2\lclsupport.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="6"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit157>
     </Units>
-    <JumpHistory HistoryIndex="-1"/>
+    <JumpHistory Count="29" HistoryIndex="28">
+      <Position1>
+        <Filename Value="..\Source\TBXDkPanels.pas"/>
+        <Caret Line="41" Column="12" TopLine="31"/>
+      </Position1>
+      <Position2>
+        <Filename Value="..\Source\TBXDkPanels.pas"/>
+        <Caret Line="1917" Column="28" TopLine="1908"/>
+      </Position2>
+      <Position3>
+        <Filename Value="..\Source\TBXDkPanels.pas"/>
+        <Caret Line="2023" Column="34" TopLine="2014"/>
+      </Position3>
+      <Position4>
+        <Filename Value="C:\lazarus\fpc\3.0.4\source\rtl\win\wininc\redef.inc"/>
+        <Caret Line="545" Column="10" TopLine="536"/>
+      </Position4>
+      <Position5>
+        <Filename Value="..\Source\TBXDkPanels.pas"/>
+        <Caret Line="2023" Column="34" TopLine="2014"/>
+      </Position5>
+      <Position6>
+        <Filename Value="..\Source\TBXDkPanels.pas"/>
+        <Caret Line="1898" Column="16" TopLine="1888"/>
+      </Position6>
+      <Position7>
+        <Filename Value="..\Source\TBXDkPanels.pas"/>
+        <Caret Line="2377" Column="31" TopLine="2367"/>
+      </Position7>
+      <Position8>
+        <Filename Value="..\Source\TBXDkPanels.pas"/>
+        <Caret Line="2085" Column="16" TopLine="2076"/>
+      </Position8>
+      <Position9>
+        <Filename Value="..\Source\TBXDkPanels.pas"/>
+        <Caret Line="4617" Column="33" TopLine="4609"/>
+      </Position9>
+      <Position10>
+        <Filename Value="..\Source\TBXDkPanels.pas"/>
+        <Caret Line="4602" Column="16" TopLine="4592"/>
+      </Position10>
+      <Position11>
+        <Filename Value="..\Source\TBXMDI.pas"/>
+        <Caret Line="45" Column="13" TopLine="35"/>
+      </Position11>
+      <Position12>
+        <Filename Value="..\Source\TBXMDI.pas"/>
+        <Caret Line="282" Column="8" TopLine="273"/>
+      </Position12>
+      <Position13>
+        <Filename Value="..\Source\TBXMDI.pas"/>
+        <Caret Line="45" Column="11" TopLine="34"/>
+      </Position13>
+      <Position14>
+        <Filename Value="..\Source\TBXStatusBars.pas"/>
+        <Caret Line="41" Column="12" TopLine="31"/>
+      </Position14>
+      <Position15>
+        <Filename Value="..\Source\TBXStrEdit.pas"/>
+        <Caret Line="36" Column="53" TopLine="26"/>
+      </Position15>
+      <Position16>
+        <Filename Value="..\Source\TBXSwitcher.pas"/>
+        <Caret Line="40" Column="12" TopLine="30"/>
+      </Position16>
+      <Position17>
+        <Filename Value="..\Source\tb2\tb2delphi.pas"/>
+        <Caret Line="51" TopLine="51"/>
+      </Position17>
+      <Position18>
+        <Filename Value="C:\lazarus\fpc\3.0.4\source\packages\winunits-base\src\winspool.pp"/>
+        <Caret Line="31" TopLine="31"/>
+      </Position18>
+      <Position19>
+        <Filename Value="..\Source\Themes\TBXStripesTheme.pas"/>
+        <Caret Line="40" Column="3" TopLine="31"/>
+      </Position19>
+      <Position20>
+        <Filename Value="..\Source\Themes\TBXStripesTheme.pas"/>
+        <Caret Line="118" Column="11" TopLine="108"/>
+      </Position20>
+      <Position21>
+        <Filename Value="..\Source\Themes\TBXStripesTheme.pas"/>
+        <Caret Line="40" Column="11" TopLine="31"/>
+      </Position21>
+      <Position22>
+        <Filename Value="..\Source\Themes\TBXStripesTheme.pas"/>
+        <Caret Line="158" Column="5" TopLine="148"/>
+      </Position22>
+      <Position23>
+        <Filename Value="..\Source\tbxreg_comp.pas"/>
+        <Caret Line="25" Column="12" TopLine="15"/>
+      </Position23>
+      <Position24>
+        <Filename Value="..\Source\TBXPanel.pas"/>
+        <Caret Line="12" Column="12" TopLine="2"/>
+      </Position24>
+      <Position25>
+        <Filename Value="..\Source\tb2\TB2MDI.pas"/>
+        <Caret Line="35" Column="99" TopLine="31"/>
+      </Position25>
+      <Position26>
+        <Filename Value="C:\lazarus\lcl\lmessages.pp"/>
+        <Caret Line="11" TopLine="11"/>
+      </Position26>
+      <Position27>
+        <Filename Value="..\Source\tb2\TB2Acc.pas"/>
+        <Caret Line="43" Column="26" TopLine="34"/>
+      </Position27>
+      <Position28>
+        <Filename Value="..\Source\tb2\TB2Item.pas"/>
+        <Caret Line="50" Column="6" TopLine="39"/>
+      </Position28>
+      <Position29>
+        <Filename Value="..\Source\tb2\TB2Acc.pas"/>
+        <Caret Line="43" Column="23" TopLine="34"/>
+      </Position29>
+    </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
       <Modes Count="0" ActiveMode="default"/>
