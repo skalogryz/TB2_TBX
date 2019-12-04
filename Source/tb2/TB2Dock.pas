@@ -42,7 +42,7 @@ interface
 uses
   Types,
   SysUtils,
-  TB2Types, tb2Control,
+  TB2Types,
   {$IFnDEF FPC} Windows, Messages, Consts, {$ELSE}
   LclIntf, LCLType, LMessages, TBXLCLWinCompat, lclsupport, LCLProc, LCLStrConsts, InterfaceBase,
   {$ENDIF}
@@ -71,7 +71,7 @@ type
   TTBRequestDockEvent = procedure(Sender: TObject; Bar: TTBCustomDockableWindow;
     var Accept: Boolean) of object;
 
-  TTBDock = class(TTB2CustomControl)
+  TTBDock = class(TCustomControl)
   private
     { Property values }
     FPosition: TTBDockPosition;
