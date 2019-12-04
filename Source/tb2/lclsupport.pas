@@ -3,12 +3,13 @@ unit lclsupport;
 interface
 
 uses
-  Classes, SysUtils, LCLType;
+  Classes, SysUtils, Graphics, LCLType;
 
 procedure InitializeCriticalSection(var CriticalSection : TRTLCriticalSection);
 procedure DeleteCriticalSection(var CriticalSection : TRTLCriticalSection);
 
 function ToSmallPoint(w: WParam): TSmallPoint;
+function CopyPalette(src: HPALETTE): HPALETTE;
 
 implementation
 
@@ -26,6 +27,12 @@ end;
 procedure DeleteCriticalSection(var CriticalSection : TRTLCriticalSection);
 begin
   System.DoneCriticalsection(CriticalSection);
+end;
+
+function CopyPalette(src: HPALETTE): HPALETTE;
+begin
+  //todo:
+  Result := src;
 end;
 
 end.

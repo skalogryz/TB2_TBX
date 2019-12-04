@@ -44,7 +44,7 @@ uses
   SysUtils,
   TB2Types, tb2Control,
   {$IFnDEF FPC} Windows, Messages, Consts, {$ELSE}
-  Windows, tb2Delphi, Messages, Win32Int, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages,
+  LclIntf, LCLType, LMessages, TBXLCLWinCompat, lclsupport, LCLProc, LCLStrConsts, InterfaceBase,
   {$ENDIF}
   IniFiles,
   Graphics,
@@ -871,6 +871,11 @@ type
 
 function CloseButtonLoop(const Wnd: HWND; const ButtonRect: TRect;
   const SetCloseButtonStateProc: TSetCloseButtonStateProc): Boolean;
+{$ifdef fpc}
+begin
+  Result:=false;
+end;
+{$else}
   function MouseInButton: Boolean;
   var
     P: TPoint;
@@ -929,7 +934,7 @@ begin
     SetCloseButtonStateProc(False);
   end;
 end;
-
+{$endif}
 
 { TTBDock - internal }
 
@@ -3915,6 +3920,10 @@ type
   end;
 
 procedure TTBCustomDockableWindow.BeginMoving(const InitX, InitY: Integer);
+{$ifdef fpc}
+begin
+end;
+{$else}
 const
   SplitCursors: array[Boolean] of {$IFNDEF CLR} PChar {$ELSE} Integer {$ENDIF} =
     (IDC_SIZEWE, IDC_SIZENS);
@@ -4500,6 +4509,7 @@ begin
     FDragSplitting := False;
   end;
 end;
+{$endif}
 
 function TTBCustomDockableWindow.ChildControlTransparent(Ctl: TControl): Boolean;
 begin
@@ -4807,7 +4817,7 @@ begin
   if (PopupMenu <> nil) and PopupMenu.AutoPopup then
   begin
     {$IFDEF FPC}
-    SendCancelMode(TCustomForm(Self), Self);
+    //SendCancelMode(TCustomForm(Self), Self);
     {$ELSE}
     SendCancelMode(Self);
     {$ENDIF}
@@ -4859,6 +4869,10 @@ begin
 end;
 
 procedure TTBCustomDockableWindow.BeginSizing(const ASizeHandle: TTBSizeHandle);
+{$ifdef fpc}
+begin
+end;
+{$else}
 var
   UseSmoothDrag, DragX, DragY, ReverseX, ReverseY: Boolean;
   MinWidth, MinHeight, MaxWidth, MaxHeight: Integer;
@@ -5064,6 +5078,7 @@ begin
     ResizeEnd;
   end;
 end;
+{$endif}
 
 procedure TTBCustomDockableWindow.DoDockChangingHidden(NewFloating: Boolean;
   DockingTo: TTBDock);
@@ -5384,11 +5399,9 @@ begin
           FBitmap.Canvas.Pixels[0, Height-1] or $02000000);
       end;
     end;
-    {$IFDEF FPC}//@
-    Dormant(FBitmap);
-    {$ELSE}
+    {$ifndef fpc}
     FBitmap.Dormant;
-    {$ENDIF}
+    {$endif}
   end;
   UseBmp := FBitmapCache;
 
