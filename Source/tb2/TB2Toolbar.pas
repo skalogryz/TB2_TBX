@@ -1440,6 +1440,19 @@ begin
   end;
 end;
 
+function ListItemType(const p: TSmallPoint): TListItemType;
+begin
+  Result := TListItemType(PtrUInt(PLongWord(@p)^));
+end;
+
+function SmallPoint(ptr: Pointer): TSmallPoint;
+var
+  p : TSmallPoint;
+begin
+  PLongWord(@p)^:=LongWord(PtrUint(ptr));
+  Result:=p;
+end;
+
 procedure TTBCustomToolbar.BuildPotentialSizesList(SizesList: TList);
 var
   Margins: TRect;
@@ -1455,7 +1468,7 @@ begin
     { Add the widest size to the list }
     FFloatingWidth := 0;
     S := DoArrange(False, dtNotDocked, True, nil);
-    SizesList.Add(TListItemType(PointToSmallPoint(S)));
+    SizesList.Add(ListItemType(PointToSmallPoint(S)));
     { Calculate and add rest of sizes to the list }
     PrevWrappedLines := 1;
     X := S.X-1;
@@ -1468,9 +1481,9 @@ begin
       if X = S.X then begin
         S2 := PointToSmallPoint(S);
         if FLastWrappedLines <> PrevWrappedLines then
-          SizesList.Add(TListItemType(S2))
+          SizesList.Add(ListItemType(S2))
         else
-          SizesList[SizesList.Count-1] := TListItemType(S2);
+          SizesList[SizesList.Count-1] := ListItemType(S2);
         PrevWrappedLines := FLastWrappedLines;
         Dec(X);
       end
@@ -1485,13 +1498,13 @@ end;
 function CompareSizesX(Item1, Item2: TListItemType): Integer;
 begin
   { Sorts in descending order }
-  Result := TSmallPoint(Item2).X - TSmallPoint(Item1).X;
+  Result := SmallPoint(Item2).X - SmallPoint(Item1).X;
 end;
 
 function CompareSizesY(Item1, Item2: TListItemType): Integer;
 begin
   { Sorts in descending order }
-  Result := TSmallPoint(Item2).Y - TSmallPoint(Item1).Y;
+  Result := SmallPoint(Item2).Y - SmallPoint(Item1).Y;
 end;
 
 procedure TTBCustomToolbar.ResizeBegin(ASizeHandle: TTBSizeHandle);
@@ -1518,9 +1531,9 @@ begin
     NewSizes := TList.Create;
     BuildPotentialSizesList(NewSizes);
     for I := 0 to NewSizes.Count-1 do begin
-      P := SmallPointToPoint(TSmallPoint(NewSizes[I]));
+      P := SmallPointToPoint(SmallPoint(NewSizes[I]));
       AddFloatingNCAreaToSize(P);
-      NewSizes[I] := TListItemType(PointToSmallPoint(P));
+      NewSizes[I] := ListItemType(PointToSmallPoint(P));
     end;
     if ASizeHandle in [twshTop, twshBottom] then
       NewSizes.Sort(CompareSizesY)
@@ -1532,10 +1545,10 @@ begin
     DistanceToSmallerSize := 0;
     DistanceToLargerSize := 0;
     for I := 0 to NewSizes.Count-1 do begin
-      S := TSmallPoint(NewSizes[I]);
+      S := SmallPoint(NewSizes[I]);
       if (S.X = OrigWidth) and (S.Y = OrigHeight) then begin
         if I > 0 then begin
-          N := TSmallPoint(NewSizes[I-1]);
+          N := SmallPoint(NewSizes[I-1]);
           if ASizeHandle in [twshLeft, twshRight] then
             NewSize := N.X - S.X
           else
@@ -1545,7 +1558,7 @@ begin
           DistanceToLargerSize := NewSize;
         end;
         if I < NewSizes.Count-1 then begin
-          N := TSmallPoint(NewSizes[I+1]);
+          N := SmallPoint(NewSizes[I+1]);
           if ASizeHandle in [twshLeft, twshRight] then
             NewSize := S.X - N.X
           else
@@ -1606,7 +1619,7 @@ begin
     else
       I := NewSizes.Count-1;
     while True do begin
-      P := TSmallPoint(NewSizes[I]);
+      P := SmallPoint(NewSizes[I]);
       if SizeHandle in [twshLeft, twshRight] then begin
         if (not Reverse and ((I = NewSizes.Count-1) or (Pos.X >= P.X))) or
            (Reverse and ((I = 0) or (Pos.X <= P.X))) then begin
