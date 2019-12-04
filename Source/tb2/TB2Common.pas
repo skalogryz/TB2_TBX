@@ -139,7 +139,7 @@ implementation
 uses
   {$IFDEF CLR} Types, System.Security, System.Runtime.InteropServices,
     System.Text, MultiMon, {$ENDIF}
-  MMSYSTEM, TB2Version;
+  TB2Version;
 
 function AddMessage(sMethod : string; MessageID : Integer; Control : TComponent; Message: Pointer) : Boolean;
 begin
