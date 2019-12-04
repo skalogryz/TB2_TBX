@@ -13,7 +13,7 @@
         <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\"/>
       </SearchPaths>
     </CompilerOptions>
-    <Files Count="20">
+    <Files Count="16">
       <Item1>
         <Filename Value="..\Source\tb2\lclsupport.pas"/>
         <UnitName Value="lclsupport"/>
@@ -51,50 +51,33 @@
         <UnitName Value="TB2Item"/>
       </Item9>
       <Item10>
-        <Filename Value="..\Source\tb2\TB2MDI.pas"/>
-        <UnitName Value="TB2MDI"/>
-      </Item10>
-      <Item11>
-        <Filename Value="..\Source\tb2\TB2MRU.pas"/>
-        <UnitName Value="TB2MRU"/>
-      </Item11>
-      <Item12>
         <Filename Value="..\Source\tb2\TB2OleMarshal.pas"/>
         <UnitName Value="TB2OleMarshal"/>
-      </Item12>
-      <Item13>
-        <Filename Value="..\Source\tb2\TB2Reg.pas"/>
-        <UnitName Value="TB2Reg"/>
-      </Item13>
-      <Item14>
-        <Filename Value="..\Source\tb2\tb2reg_comp.pas"/>
-        <HasRegisterProc Value="True"/>
-        <UnitName Value="TB2Reg_Comp"/>
-      </Item14>
-      <Item15>
+      </Item10>
+      <Item11>
         <Filename Value="..\Source\tb2\TB2Toolbar.pas"/>
         <UnitName Value="TB2Toolbar"/>
-      </Item15>
-      <Item16>
+      </Item11>
+      <Item12>
         <Filename Value="..\Source\tb2\TB2ToolWindow.pas"/>
         <UnitName Value="TB2ToolWindow"/>
-      </Item16>
-      <Item17>
+      </Item12>
+      <Item13>
         <Filename Value="..\Source\tb2\TB2Types.pas"/>
         <UnitName Value="TB2Types"/>
-      </Item17>
-      <Item18>
+      </Item13>
+      <Item14>
         <Filename Value="..\Source\tb2\TB2Ver.inc"/>
         <Type Value="Include"/>
-      </Item18>
-      <Item19>
+      </Item14>
+      <Item15>
         <Filename Value="..\Source\tb2\TB2Version.pas"/>
         <UnitName Value="TB2Version"/>
-      </Item19>
-      <Item20>
+      </Item15>
+      <Item16>
         <Filename Value="..\Source\tb2\TB2LCLWinCompat.pas"/>
         <UnitName Value="TBXLCLWinCompat"/>
-      </Item20>
+      </Item16>
     </Files>
     <RequiredPkgs Count="2">
       <Item1>

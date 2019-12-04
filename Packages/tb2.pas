@@ -9,15 +9,13 @@ interface
 
 uses
   lclsupport, TB2Acc, TB2Anim, TB2Common, TB2Consts, TB2Dock, TB2ExtItems, 
-  TB2Hook, TB2Item, TB2MDI, TB2MRU, TB2OleMarshal, TB2Reg, TB2Reg_Comp, 
-  TB2Toolbar, TB2ToolWindow, TB2Types, TB2Version, TB2LCLWinCompat, 
-  LazarusPackageIntf;
+  TB2Hook, TB2Item, TB2OleMarshal, TB2Toolbar, TB2ToolWindow, TB2Types, 
+  TB2Version, TB2LCLWinCompat, LazarusPackageIntf;
 
 implementation
 
 procedure Register;
 begin
-  RegisterUnit('TB2Reg_Comp', @TB2Reg_Comp.Register);
 end;
 
 initialization
