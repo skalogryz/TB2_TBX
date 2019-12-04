@@ -289,6 +289,16 @@ function WideCharToMultiByte(
 ): Integer;
 function MessageBeep(uType: LongWord): LongBool;
 
+{$ifndef mswindows}
+// these variables are present at System Utils
+var
+  Win32Platform : Longint = 0;
+  Win32MajorVersion  : dword = 0;
+  Win32MinorVersion  : dword = 0;
+  Win32BuildNumber   : dword = 0;
+  Win32CSDVersion    : ShortString = '';   // CSD record is 128 bytes only?
+{$endif}
+
 implementation
 
 var
