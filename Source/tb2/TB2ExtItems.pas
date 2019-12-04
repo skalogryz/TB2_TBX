@@ -34,8 +34,10 @@ interface
 {$I TB2Ver.inc}
 
 uses 
-  {$IFnDEF FPC} Windows, {$ELSE} Windows, LclIntf, LCLType, LCLStrConsts, InterfaceBase, {$ENDIF}
-  {$IFnDEF FPC} Messages, {$ELSE}  LMessages, {$ENDIF}
+  {$IFnDEF FPC} Windows, Messages,
+  {$ELSE}
+  LclIntf, LCLType, LCLStrConsts, InterfaceBase, TB2LCLWinCompat,
+  {$ENDIF}
   SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   StdCtrls, CommCtrl, Menus, ActnList,
   TB2Item;
@@ -760,6 +762,11 @@ begin
 end;
 
 function TTBEditItemViewer.EditLoop(const CapHandle: HWND): Boolean;
+{$ifdef fpc}
+begin
+   //todo: TTBEditItemViewer.EditLoop
+end;
+{$else}
 
   procedure ControlMessageLoop;
 
@@ -967,6 +974,7 @@ begin
         GetKeyState(VK_SHIFT) >= 0);
   end;
 end;
+{$endif}
 
 function TTBEditItemViewer.DoExecute: Boolean;
 begin

@@ -54,6 +54,7 @@ const
   WM_NCACTIVATE       = LM_NCACTIVATE;
   WM_TIMER            = LM_TIMER;
   WM_MouseLeave       = LM_MOUSELEAVE;
+  WM_KILLFOCUS        = LM_KILLFOCUS;
 
   WHEEL_DELTA         = 120;
 
@@ -168,7 +169,8 @@ const
   IDC_SIZEALL = nil; // todo!
   IDC_SIZEWE  = nil; // todo!
   IDC_SIZENS  = nil; // todo!
-  IDC_NO      = nil;
+  IDC_NO      = nil; // todo!
+  IDC_IBEAM   = nil; // todo!
 
   { WNDCLASS structure  }
   CS_BYTEALIGNCLIENT = 4096;
