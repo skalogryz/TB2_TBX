@@ -13,7 +13,7 @@
         <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\"/>
       </SearchPaths>
     </CompilerOptions>
-    <Files Count="19">
+    <Files Count="20">
       <Item1>
         <Filename Value="..\Source\tb2\lclsupport.pas"/>
         <UnitName Value="lclsupport"/>
@@ -68,6 +68,7 @@
       </Item13>
       <Item14>
         <Filename Value="..\Source\tb2\tb2reg_comp.pas"/>
+        <HasRegisterProc Value="True"/>
         <UnitName Value="TB2Reg_Comp"/>
       </Item14>
       <Item15>
@@ -90,6 +91,10 @@
         <Filename Value="..\Source\tb2\TB2Version.pas"/>
         <UnitName Value="TB2Version"/>
       </Item19>
+      <Item20>
+        <Filename Value="..\Source\tb2\TB2LCLWinCompat.pas"/>
+        <UnitName Value="TBXLCLWinCompat"/>
+      </Item20>
     </Files>
     <RequiredPkgs Count="2">
       <Item1>
