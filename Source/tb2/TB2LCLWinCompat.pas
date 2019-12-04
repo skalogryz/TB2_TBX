@@ -12,18 +12,22 @@ type
   WINBOOL  = LongBool;
 
 const
-  LM_PRINT            = LM_USER + $3000;
-  WM_PrintClient      = LM_USER + $3001; //
-  WM_DISPLAYCHANGE    = LM_USER + $3002; // todo: LCL should be used
-  WM_SYSCOLORCHANGE   = LM_USER + $3003; // todo: LCL should be used
-  WM_THEMECHANGED     = LM_USER + $3004; // todo: LCL should be used
-  WM_ACTIVATEAPP      = LM_USER + $3005; // todo: LCL should be used
-  WM_Close            = LM_USER + $3006;
-  WM_GETOBJECT        = LM_USER + $3007;
-  WM_GETMINMAXINFO    = LM_USER + $3008;
-  WM_MOUSEACTIVATE    = LM_USER + $3009;
-  WM_NCRButtonUp      = LM_USER + $300A;
-  WM_NCMouseLeave     = LM_USER + $300B;
+  WM_APP              = {$ifndef mswindows}$8000{$else}Windows.WM_APP{$endif};
+  LM_PRINT            = {$ifndef mswindows}LM_USER + $3000{$else}Windows.WM_PRINT         {$endif};
+  WM_PrintClient      = {$ifndef mswindows}LM_USER + $3001{$else}Windows.WM_PrintClient   {$endif};
+  WM_DISPLAYCHANGE    = {$ifndef mswindows}LM_USER + $3002{$else}Windows.WM_DISPLAYCHANGE {$endif}; // todo: LCL should be used
+  WM_SYSCOLORCHANGE   = {$ifndef mswindows}LM_USER + $3003{$else}Windows.WM_SYSCOLORCHANGE{$endif}; // todo: LCL should be used
+  WM_THEMECHANGED     = {$ifndef mswindows}LM_USER + $3004{$else}Windows.WM_THEMECHANGED  {$endif}; // todo: LCL should be used
+  WM_ACTIVATEAPP      = {$ifndef mswindows}LM_USER + $3005{$else}Windows.WM_ACTIVATEAPP   {$endif}; // todo: LCL should be used
+  WM_Close            = {$ifndef mswindows}LM_USER + $3006{$else}Windows.WM_Close         {$endif};
+  WM_GETOBJECT        = {$ifndef mswindows}LM_USER + $3007{$else}Windows.WM_GETOBJECT     {$endif};
+  WM_GETMINMAXINFO    = {$ifndef mswindows}LM_USER + $3008{$else}Windows.WM_GETMINMAXINFO {$endif};
+  WM_MOUSEACTIVATE    = {$ifndef mswindows}LM_USER + $3009{$else}Windows.WM_MOUSEACTIVATE {$endif};
+  WM_NCMouseLeave     = {$ifndef mswindows}LM_USER + $300B{$else}Windows.WM_NCMouseLeave  {$endif};
+  WM_DEADCHAR         = LM_USER + $3010;
+  WM_SYSDEADCHAR      = LM_USER + $3011;
+
+
 
   WM_EraseBkgnd       = LM_ERASEBKGND;
   WM_NCCalcSize       = LM_NCCALCSIZE;
@@ -46,15 +50,36 @@ const
   WM_KEYDOWN          = LM_KEYDOWN;
   WM_KEYUP            = LM_KEYUP;
   WM_ACTIVATE         = LM_ACTIVATE;
-  WM_NCLBUTTONDOWN    = LM_NCLBUTTONDOWN;
   WM_CONTEXTMENU      = LM_CONTEXTMENU;
   WM_NCMOUSEMOVE      = LM_NCMOUSEMOVE;
   WM_CAPTURECHANGED   = LM_CAPTURECHANGED;
-  WM_NCLButtonDblClk  = LM_NCLBUTTONDBLCLK;
   WM_NCACTIVATE       = LM_NCACTIVATE;
   WM_TIMER            = LM_TIMER;
   WM_MouseLeave       = LM_MOUSELEAVE;
   WM_KILLFOCUS        = LM_KILLFOCUS;
+  WM_SETFOCUS         = LM_SETFOCUS;
+  WM_NOTIFY           = LM_NOTIFY;
+  WM_SETFONT          = LM_SETFONT;
+  WM_LBUTTONDBLCLK    = LM_LBUTTONDBLCLK;
+  WM_RBUTTONDBLCLK    = LM_RBUTTONDBLCLK;
+  WM_MBUTTONDOWN      = LM_MBUTTONDOWN;
+  WM_MBUTTONDBLCLK    = LM_MBUTTONDBLCLK;
+  WM_SYSKEYDOWN       = LM_SYSKEYDOWN;
+  WM_SYSKEYUP         = LM_SYSKEYUP;
+  WM_MOUSEFIRST       = LM_MOUSEFIRST;
+  WM_MOUSELAST        = LM_MOUSELAST;
+  WM_MOUSEWHEEL       = LM_MOUSEWHEEL;
+
+  WM_NCLBUTTONDOWN    = LM_NCLBUTTONDOWN;
+  WM_NCLBUTTONUP      = LM_NCLBUTTONUP;
+  WM_NCLButtonDblClk  = LM_NCLBUTTONDBLCLK;
+  WM_NCRBUTTONDOWN    = 164;
+  WM_NCRBUTTONUP      = 165;
+  WM_NCRBUTTONDBLCLK  = 166;
+  WM_NCMBUTTONDOWN    = 167;
+  WM_NCMBUTTONUP      = 168;
+  WM_NCMBUTTONDBLCLK  = 169;
+
 
   WHEEL_DELTA         = 120;
 
@@ -136,6 +161,18 @@ type
   TWMTimer           = TLMTimer;
   TWMWinIniChange    = TLMessage;
   TWMCancelMode      = TLMessage;
+  TWMWindowPosChanged = TLMessage;
+  TWMActivateApp     = TLMessage;
+  TCMFocusChanged    = TLMessage;
+  TWMNotify          = TLMNotify;
+  TWMNCPaint         = TLMessage;
+  TWMKillFocus       = TLMKillFocus;
+  TWMMeasureItem     = TLMMeasureItem;
+  TWMDrawItem        = TLMDrawItems;
+  TWMSetFont         = TLMessage;
+  TWMChar            = TLMChar;
+
+  TMessageEvent = procedure (var Msg: TMsg; var Handled: Boolean) of object;
 
 const
   // from WinAPI (Windows)
@@ -171,6 +208,8 @@ const
   IDC_SIZENS  = nil; // todo!
   IDC_NO      = nil; // todo!
   IDC_IBEAM   = nil; // todo!
+  IDI_APPLICATION = nil; //todo:
+  IDC_HAND        = nil; //todo:
 
   { WNDCLASS structure  }
   CS_BYTEALIGNCLIENT = 4096;
@@ -186,6 +225,8 @@ const
   CS_PARENTDC = 128;
   CS_SAVEBITS = 2048;
   CS_VREDRAW = 1;
+  CS_IME = $10000;
+  CS_DROPSHADOW = $20000;
 
   { WM_NCHITTEST message  }
   HTBOTTOM = 15;
@@ -300,6 +341,84 @@ var
   Win32BuildNumber   : dword = 0;
   Win32CSDVersion    : ShortString = '';   // CSD record is 128 bytes only?
 {$endif}
+function GetMenuStringW(hMenu: HMENU; uIDItem: UINT; lpString: PWideString;
+  cchMax: integer; flags: UINT): integer;
+function lStrLenW(pw: PWideChar): integer;
+
+type
+  TMenuItemInfo = record
+    cbSize        : UINT;
+    fMask         : UINT;
+    fType         : UINT;
+    fState        : UINT;
+    wID           : UINT;
+    hSubMenu      : HMENU;
+    hbmpChecked   : HBITMAP;
+    hbmpUnchecked : HBITMAP;
+    dwItemData    : ULONG_PTR;
+    dwTypeData    : LPWSTR;
+    cch           : UINT;
+    hbmpItem      : HBITMAP;
+  end;
+
+const
+  { MENUITEMINFO structure  }
+  MIIM_CHECKMARKS  = 8;
+  MIIM_DATA        = 32;
+  MIIM_ID          = 2;
+  MIIM_STATE       = 1;
+  MIIM_SUBMENU     = 4;
+  MIIM_TYPE        = 16;
+  MIIM_STRING      = 64;
+  MIIM_BITMAP      = 128;
+  MIIM_FTYPE       = 256;
+  MFT_BITMAP       = $4;
+  MFT_MENUBARBREAK = $20;
+  MFT_MENUBREAK    = $40;
+  MFT_OWNERDRAW    = $100;
+  MFT_RADIOCHECK   = $200;
+  MFT_RIGHTJUSTIFY = $4000;
+  MFT_SEPARATOR    = $800;
+  MFT_RIGHTORDER   = $2000;
+  MFT_STRING       = 0;
+  MFS_CHECKED      = $8;
+  MFS_DEFAULT      = $1000;
+  MFS_DISABLED     = $3;
+  MFS_ENABLED      = 0;
+  MFS_GRAYED       = $3;
+  MFS_HILITE       = $80;
+  MFS_UNCHECKED    = 0;
+  MFS_UNHILITE     = 0;
+  { TrackPopupMenu, TrackPopMenuEx  }
+  TPM_CENTERALIGN = $4;
+  TPM_LEFTALIGN   = 0;
+  TPM_RIGHTALIGN  = $8;
+  TPM_LEFTBUTTON  = 0;
+  TPM_RIGHTBUTTON = $2;
+  TPM_HORIZONTAL  = 0;
+  TPM_VERTICAL    = $40;
+  TPM_TOPALIGN    = 0;
+  TPM_VCENTERALIGN= $10;
+  TPM_BOTTOMALIGN = $20;
+  TPM_NONOTIFY    = $80;
+  TPM_RETURNCMD   = $100;
+  TPM_RECURSE         = $0001;
+  TPM_HORPOSANIMATION = $0400;
+  TPM_HORNEGANIMATION = $0800;
+  TPM_VERPOSANIMATION = $1000;
+  TPM_VERNEGANIMATION = $2000;
+  TPM_NOANIMATION     = $4000;
+  TPM_LAYOUTRTL       = $8000;
+
+function IsMenu(AMenu: HMenu): Boolean;
+function GetMenuItemCount(AMenu: HMenu): Integer;
+function GetMenuItemInfo(mnu: HMENU; item: UINT; fByPosition : LongBool; var lpmii: TMenuItemInfo): LongBool;
+function GetSystemMenu(hWnd: HWND; bRevert: LongBool): HMENU;
+function EnableMenuItem(Mnu: HMENU; uIDEnableItem: UINT; uEnable: UINT): LongBool;
+function TrackPopupMenuEx({%H-}Menu: HMENU; {%H-}uFlags: UINT; x,y: Integer;
+  wnd: HWND; lptpm: Pointer): LongBool;
+
+function GetClipBox(DC: HDC; var BoxR: TRect): integer;
 
 implementation
 
@@ -443,6 +562,54 @@ end;
 function MessageBeep(uType: LongWord): LongBool;
 begin
   Result:=false;
+end;
+
+function GetMenuStringW(hMenu: HMENU; uIDItem: UINT; lpString: PWideString;
+  cchMax: integer; flags: UINT): integer;
+begin
+  Result:=0;
+end;
+
+function lStrLenW(pw: PWideChar): integer;
+begin
+  //todo:
+  Result:=0;
+end;
+
+function IsMenu(AMenu: HMenu): Boolean;
+begin
+  Result:=false;
+end;
+
+function GetMenuItemCount(AMenu: HMenu): Integer;
+begin
+  Result:=0;
+end;
+
+function GetMenuItemInfo(mnu: HMENU; item: UINT; fByPosition : LongBool; var lpmii: TMENUITEMINFO): LongBool;
+begin
+  Result:=false;
+end;
+
+function GetSystemMenu(hWnd: HWND; bRevert: LongBool): HMENU;
+begin
+  Result:=0;
+end;
+
+function EnableMenuItem(Mnu: HMENU; uIDEnableItem: UINT; uEnable: UINT): LongBool;
+begin
+  Result:=false;
+end;
+
+function TrackPopupMenuEx(Menu: HMENU; uFlags: UINT; x,y: Integer;
+  wnd: HWND; lptpm: Pointer): LongBool;
+begin
+  Result:=false;
+end;
+
+function GetClipBox(DC: HDC; var BoxR: TRect): integer;
+begin
+  Result := LCLIntf.GetClipBox(dc, @BoxR);
 end;
 
 initialization

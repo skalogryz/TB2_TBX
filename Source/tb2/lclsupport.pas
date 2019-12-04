@@ -3,7 +3,7 @@ unit lclsupport;
 interface
 
 uses
-  Classes, SysUtils, Graphics, LCLType, Controls;
+  Classes, SysUtils, Graphics, LCLType, Controls, Menus;
 
 procedure InitializeCriticalSection(var CriticalSection : TRTLCriticalSection);
 procedure DeleteCriticalSection(var CriticalSection : TRTLCriticalSection);
@@ -18,6 +18,27 @@ type
   TVCLCompatcontrol = class helper for TControl
   public
     procedure SendCancelMode(Sender: TObject);
+    function GetControlsAlignment: TAlignment;
+    function DrawTextBiDiModeFlags(aflags: integer): integer;
+  end;
+
+  { TVCLImageList }
+
+  TVCLImageList = class helper for TImageList
+  public
+    procedure SetSize(AWidth, AHeight: integer);
+  end;
+
+  { TVCLControlCanvasHelper }
+
+  TVCLControlCanvasHelper = class helper for TControlCanvas
+    procedure UpdateTextFlags;
+  end;
+
+  { TVCLPopupMenu }
+
+  TVCLPopupMenu = class helper for TPopupMenu
+    procedure SetPopupPoint(const p: TPoint);
   end;
 
 implementation
@@ -44,11 +65,43 @@ begin
   Result := src;
 end;
 
+{ TVCLPopupMenu }
+
+procedure TVCLPopupMenu.SetPopupPoint(const p: TPoint);
+begin
+
+end;
+
+{ TVCLControlCanvasHelper }
+
+procedure TVCLControlCanvasHelper.UpdateTextFlags;
+begin
+  //todo:
+end;
+
+{ TVCLImageList }
+
+procedure TVCLImageList.SetSize(AWidth, Aheight: integer);
+begin
+  Width:=AWidth;
+  Height:=AHeight;
+end;
+
 { TVCLCompatcontrol }
 
 procedure TVCLCompatcontrol.SendCancelMode(Sender: TObject);
 begin
   //todo:
+end;
+
+function TVCLCompatcontrol.GetControlsAlignment: TAlignment;
+begin
+  Result:=taLeftJustify;
+end;
+
+function TVCLCompatcontrol.DrawTextBiDiModeFlags(aflags: integer): integer;
+begin
+  Result:=aflags;
 end;
 
 end.

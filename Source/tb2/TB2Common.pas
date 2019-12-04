@@ -675,7 +675,7 @@ begin
     try
       { Draw the updated region }
       SelectClipRgn(DC, UpdateRgn);
-      GetClipBox(DC, {$IFDEF FPC}@{$ENDIF}R);
+      GetClipBox(DC, R);
       SelectObject(DC, Brush);
       PatBlt(DC, R.Left, R.Top, R.Right-R.Left, R.Bottom-R.Top, PATINVERT);
     finally
@@ -906,7 +906,7 @@ begin
     if WndDC <> 0 then begin
       try
         { Only repaint the area that intersects the clipping rectangle }
-        if (GetClipBox(WndDC, {$IFDEF FPC}@{$ENDIF}ClipRect) <> 0) and
+        if (GetClipBox(WndDC, ClipRect) <> 0) and
            IntersectRect(R, ClientRect, ClipRect) then begin
           Bmp := CreateCompatibleBitmap(WndDC, R.Right - R.Left, R.Bottom - R.Top);
           if Bmp <> 0 then begin

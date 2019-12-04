@@ -5420,7 +5420,7 @@ begin
   SaveIndex := SaveDC(DrawToDC);
   try
     IntersectClipRect(DrawToDC, R1.Left, R1.Top, R1.Right, R1.Bottom);
-    GetClipBox(DrawToDC, {$IFDEF FPC}@{$ENDIF}R3);
+    GetClipBox(DrawToDC, R3);
     if IsRectEmpty(R3) then
       Exit;
 

@@ -87,6 +87,8 @@ type
     {$IFNDEF JR_D4}
     FOnResize: TNotifyEvent;
     {$ENDIF}
+    // for SpTBX
+    FOnCanResize: TNotifyEvent;
 
     { Internal }
     FDisableArrangeToolbars: Integer;  { Increment to disable ArrangeToolbars }
@@ -131,6 +133,7 @@ type
     procedure WMPrint(var Message: TMessage); {$IFDEF PRINT}message WM_PRINT;{$ENDIF}
     procedure WMPrintClient(var Message: {$IFNDEF CLR} TMessage {$ELSE} TWMPrintClient {$ENDIF}); {$IFDEF PRINT_C}{.}message WM_PRINTCLIENT;{$ENDIF}
     procedure WMSysCommand(var Message: TWMSysCommand); {.}message WM_SYSCOMMAND;
+
   protected
     DockList: TList;  { List of the toolbars docked, and those floating and have LastDock
                         pointing to the dock. Items are casted in TTBCustomDockableWindow's. }
@@ -151,6 +154,9 @@ type
     function UsingBackground: Boolean; virtual;
     property ArrangeToolbarsNeeded: Boolean read FArrangeToolbarsNeeded write FArrangeToolbarsNeeded;
     property DisableArrangeToolbars: Integer read FDisableArrangeToolbars write FDisableArrangeToolbars;
+
+    // for SpTBX
+    function CanResize(var NewWidth: Integer; var NewHeight: Integer): Boolean; virtual;
   public
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
@@ -199,6 +205,8 @@ type
     {$ELSE}
     property OnResize: TNotifyEvent read FOnResize write FOnResize;
     {$ENDIF}
+    // for SpTBX (vs Delphi?)
+    property OnCanResize: TNotifyEvent read FOnCanResize write FOnCanResize;
   end;
 
   { TTBFloatingWindowParent - internal }
@@ -1986,6 +1994,12 @@ begin
     docked. That way, items on floating menu bars can be accessed with Alt. }
   if Message.CmdType and $FFF0 = SC_KEYMENU then
     RelayMsgToFloatingBars({$IFNDEF CLR} TMessage(Message) {$ELSE} Message.OriginalMessage {$ENDIF});
+end;
+
+function TTBDock.CanResize(var NewWidth: Integer; var NewHeight: Integer
+  ): Boolean;
+begin
+  Result := true;
 end;
 
 procedure TTBDock.CMDialogKey(var Message: TCMDialogKey);
