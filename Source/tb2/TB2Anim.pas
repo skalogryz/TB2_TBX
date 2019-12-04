@@ -35,7 +35,7 @@ interface
 
 uses
   {$IFnDEF FPC} Windows, Messages, {$ELSE}
-  Windows, LclIntf, LCLType, LCLStrConsts, Win32Int, InterfaceBase, LMessages,
+  Types, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages,
   {$ENDIF}
   SysUtils, Classes;
 
@@ -53,6 +53,25 @@ function TBIsAnimationInProgress: Boolean;
 
 implementation
 
+{$ifdef fpc}
+procedure TBStartAnimation(const AWnd: HWND; const ABlend: Boolean;
+  const ADirection: TTBAnimationDirection);
+begin
+end;
+
+procedure TBUpdateAnimation;
+begin
+end;
+
+procedure TBEndAnimation(const Wnd: HWND);
+begin
+end;
+
+function TBIsAnimationInProgress: Boolean;
+begin
+end;
+
+{$else}
 uses
   {$IFDEF CLR} System.Security, System.Runtime.InteropServices, System.Threading, {$ENDIF}
   TB2Common;
@@ -325,4 +344,5 @@ initialization
   {$ENDIF}
 finalization
   FinalizeAnimation;
+{$endif}
 end.
