@@ -75,7 +75,6 @@ type
 const
   // from WinAPI (Windows)
   VER_PLATFORM_WIN32_NT = 2;
-  CS_DBLCLKS = 8;
 
   // For the TRackMouseEvent
   TME_HOVER     = $00000001;
@@ -103,6 +102,22 @@ const
 
   IDC_ARROW = 0; // todo:
 
+  { WNDCLASS structure  }
+  CS_BYTEALIGNCLIENT = 4096;
+  CS_BYTEALIGNWINDOW = 8192;
+  CS_CLASSDC = 64;
+  CS_DBLCLKS = 8;
+  CS_GLOBALCLASS = 16384;
+  CS_HREDRAW = 2;
+  CS_KEYCVTWINDOW = 4;
+  CS_NOCLOSE = 512;
+  CS_NOKEYCVT = 256;
+  CS_OWNDC = 32;
+  CS_PARENTDC = 128;
+  CS_SAVEBITS = 2048;
+  CS_VREDRAW = 1;
+
+
 // from WinAPI (Windows);
 function GetWindowDC(AHandle: THandle): HDC;
 procedure ValidateRect(Handle: THandle; p: PRect);
@@ -126,6 +141,7 @@ function SetBrushOrgEx(_para1:HDC; _para2:longint; _para3:longint;  _para4: PPOI
 // always return the main thread, as windows can only be created in the main thread (UI) in LCL
 function GetWindowThreadProcessId(window: THandle; procId: Pointer): TThreadID;
 function GetDesktopWindow: THandle; // todo: this should not be needed
+function SendNotifyMessage(hWnd:HWND; Msg:UINT; wParam:WPARAM; lParam:LPARAM):LongBool;
 
 implementation
 
@@ -206,6 +222,15 @@ end;
 function GetDesktopWindow: THandle;
 begin
   Result := 0;
+end;
+
+function SendNotifyMessage(hWnd:HWND; Msg:UINT; wParam:WPARAM; lParam:LPARAM):LongBool;
+begin
+  if ThreadID <> mainThreadID then
+    LCLIntf.PostMessage(hWnd, Msg, wParam, lParam)
+  else
+    LCLIntf.SendMessage(hWnd, Msg, wParam, lParam);
+  Result := true;
 end;
 
 initialization
