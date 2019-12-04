@@ -36,6 +36,8 @@ const
   WM_LBUTTONDOWN      = LM_LBUTTONDOWN;
   WM_RBUTTONDOWN      = LM_RBUTTONDOWN;
   WM_CANCELMODE       = LM_CANCELMODE;
+  WM_KEYDOWN          = LM_KEYDOWN;
+  WM_KEYUP            = LM_KEYUP;
 
   WHEEL_DELTA         = 120;
 
@@ -63,14 +65,15 @@ type
     //iPaddedBorderWidth : longint;     // WINVER >= 0x0600
   end;
 
-  TWMSize = TLMSize;
-  TMessage = TLMessage;
-  TWMKey = TLMKey;
+  TWMSize       = TLMSize;
+  TMessage      = TLMessage;
+  TWMKey        = TLMKey;
 
-  TWMClose = TLMessage; // todo:
+  TWMClose      = TLMessage; // todo:
   TWMEraseBkgnd = TLMEraseBkgnd;
   TWMNCCalcSize = TLMNCCalcSize;
-  TWMPaint = TLMPaint;
+  TWMPaint      = TLMPaint;
+  TWMKeyDown    = TLMKeyDown;
 
 const
   // from WinAPI (Windows)

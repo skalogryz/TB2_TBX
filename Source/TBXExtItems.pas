@@ -40,7 +40,7 @@ uses
   Classes, SysUtils, Controls, StdCtrls, ExtCtrls,
   TBX, TBXThemes, TB2Item, TB2Toolbar, TB2ExtItems, TBXLists, TB2Dock,
   {$IFnDEF FPC} Windows, Messages, {$ELSE}
-  Windows, Types, tb2Delphi, LclIntf, LCLType, LCLStrConsts, InterfaceBase, LMessages,
+  Types, LclIntf, LCLType, LMessages, TBXLCLWinCompat, lclsupport, LCLProc,
   {$ENDIF}
   Graphics,
   TB2MRU;
@@ -540,8 +540,13 @@ begin
   L := Length(ASubText);
   L2 := Length(AText);
   if L > L2 then Result := False
-  else Result := CompareString(LOCALE_USER_DEFAULT, NORM_IGNORECASE,
+  else
+    {$ifdef fpc}
+    Result := AnsiStrIComp(P, PChar(AText))=0;
+    {$else}
+    Result := CompareString(LOCALE_USER_DEFAULT, NORM_IGNORECASE,
     P, L, PChar(ASubText), L) = 2;
+    {$endif}
 end;
 
 //============================================================================//
