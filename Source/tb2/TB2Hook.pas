@@ -32,7 +32,8 @@ interface
 
 uses
   {$IFnDEF FPC} Windows, Messages, {$ELSE}
-  windows, LclIntf, LCLType, LCLStrConsts, Win32Int, InterfaceBase, FPCanvas, LMessages,
+  LclIntf, LCLType, LCLStrConsts, InterfaceBase, FPCanvas, LMessages,
+  TB2LCLWinCompat,
   {$ENDIF}
   classes;
 
@@ -48,6 +49,7 @@ procedure UninstallHookProc(AUser: TObject; AProc: THookProc);
 
 implementation
 
+{$ifndef fpc}
 uses
   {$IFDEF CLR} System.Runtime.InteropServices, {$ENDIF} 
   SysUtils, TB2Common;
@@ -236,8 +238,13 @@ begin
       Exit;
   FreeAndNil(HookInfo);
 end;
+{$endif}
 
 procedure InstallHookProc(AUser: TObject; AProc: THookProc; ACodes: THookProcCodes);
+{$ifdef fpc}
+begin
+end;
+{$else}
 var
   Found: Boolean;
   I: Integer;
@@ -290,8 +297,13 @@ begin
   end;
 1:InstallHooks(HookCodesToTypes(ACodes), UserData.InstalledHookTypes);
 end;
+{$endif}
 
 procedure UninstallHookProc(AUser: TObject; AProc: THookProc);
+{$ifdef fpc}
+begin
+end;
+{$else}
 var
   I: Integer;
   ProcData: THookProcData;
@@ -336,7 +348,6 @@ begin
     FreeAndNil(HookProcList);
 end;
 
-
 initialization
   { Work around Delphi.NET 2005 bug: declaring a constant array of procedural
     types crashes the compiler (see QC #10381; 2006 fixes it). So we instead
@@ -346,4 +357,6 @@ initialization
   HookProcs[htGetMessage] := GetMessageHook;
 finalization
   UninstallHooks([Low(THookType)..High(THookType)], True);
+{$endif}
+
 end.

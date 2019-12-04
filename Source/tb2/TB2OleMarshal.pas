@@ -48,11 +48,13 @@ interface
 
 {$I TB2Ver.inc}
 
+{$ifndef fpc}
 uses
   {$IFnDEF FPC}
   System.Runtime.InteropServices,
   {$ENDIF}
   Windows;
+{$endif}
 
 {$IFnDEF FPC}
 type

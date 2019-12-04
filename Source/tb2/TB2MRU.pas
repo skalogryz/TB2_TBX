@@ -34,7 +34,7 @@ interface
 
 uses
   {$IFnDEF FPC} Windows, Messages, {$ELSE}
-  LclIntf, LCLType, Win32Int, InterfaceBase, LMessages,
+  LclIntf, LCLType, InterfaceBase, LMessages,
   {$ENDIF}
   SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   IniFiles, Registry,
