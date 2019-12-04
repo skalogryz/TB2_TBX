@@ -33,14 +33,19 @@ unit TB2Acc;
 {$ENDIF}
 interface
 
+{$ifdef fpc}
+
+//todo: for FPC it's an empty unit
+implementation
+
+{$else}
 {$I TB2Ver.inc}
 
 uses
   Types,   // System.Types (included for inline expansion)
   SysUtils,
   {$IFnDEF FPC} Windows, Messages, {$ELSE}
-  Windows,
-  tb2Delphi, LclIntf, lclsupport, LCLType, LCLStrConsts, InterfaceBase, LMessages,
+  LclIntf, lclsupport, LCLType, LCLStrConsts, InterfaceBase, LMessages,
   {$ENDIF}
   Graphics,
   Controls,
@@ -315,6 +320,8 @@ function AccessibleObjectFromWindowFunc; external;
 procedure CallNotifyWinEvent(event: DWORD; hwnd: HWND; idObject: DWORD;
   idChild: Longint);
 begin
+  {$ifdef fpc}
+  {$else}
   {$IFNDEF CLR}
   if not NotifyWinEventInited then begin
     NotifyWinEventFunc := GetProcAddress(GetModuleHandle(user32), 'NotifyWinEvent');
@@ -326,6 +333,7 @@ begin
   { NotifyWinEvent is supported on all platforms .NET supports }
   NotifyWinEvent(event, hwnd, Longint(idObject), idChild);
   {$ENDIF}
+  {$endif}
 end;
 
 var
@@ -355,9 +363,13 @@ end;
 {$IFNDEF CLR}
 function AccObjectFromWindow(const Wnd: HWND; out ADisp: IDispatch): HRESULT;
 begin
+  {$ifndef fpc}
   Result := AccessibleObjectFromWindowFunc(Wnd, OBJID_WINDOW, IDispatch, ADisp);
   if Result <> S_OK then
     ADisp := nil;
+  {$else}
+  Result := 0;
+  {$endif}
 end;
 {$ELSE}
 function AccObjectFromWindow(const Wnd: HWND; out ADisp): HRESULT;
@@ -1403,4 +1415,7 @@ finalization
     CoUninitialize;
   DeleteCriticalSection(LastAccObjectCritSect);
 {$ENDIF}
+
+{$endif}
+
 end.

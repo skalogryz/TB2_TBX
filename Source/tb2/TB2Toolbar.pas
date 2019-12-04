@@ -39,7 +39,8 @@ uses
   TB2Dock,
   TB2Item,
   {$IFnDEF FPC} Windows, Messages, {$ELSE}
-  Windows, tb2Delphi, LMessages, ExtCtrls, LclIntf, LCLType,
+  LMessages, ExtCtrls, LclIntf, LCLType, lclsupport,
+  TB2LCLWinCompat,
   {$ENDIF}
   Graphics, TB2Types;
 
@@ -999,11 +1000,7 @@ begin
           Inc(MousePos.Y, R.Bottom - R.Top);
         end
         else MousePos := ClientToScreen(MousePos);
-        {$IFDEF FPC}
-        SendCancelMode(TCustomForm(Self), Self);
-        {$ELSE}
         SendCancelMode(Self);
-        {$ENDIF}
         PopupMenu.PopupComponent := Viewer.Item;
         FIgnoreMouseLeave := True;
         try

@@ -38,8 +38,11 @@ uses
   {$IFnDEF FPC}
   Windows, Messages,
   {$ELSE}
-  Windows, tb2Delphi, LclIntf, LCLType, LCLStrConsts, Win32Int, InterfaceBase,
-  PropEdits, ComponentEditors, LResources, GraphPropEdits,
+  Windows, LclIntf, LCLType, LCLStrConsts, Win32Int, InterfaceBase,
+  //PropEdits,
+  //ComponentEditors,
+  LResources,
+  //,GraphPropEdits,
   {$ENDIF}
   Menus, TB2Item, Graphics, TB2Toolbar;
 

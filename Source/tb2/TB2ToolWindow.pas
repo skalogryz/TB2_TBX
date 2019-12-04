@@ -34,7 +34,7 @@ interface
 
 uses
   {$IFnDEF FPC} Windows, {$ELSE}
-  Windows, tb2Delphi, LclIntf, LCLType, Win32Int,
+  Windows, LclIntf, LCLType, Win32Int,
   {$ENDIF}
   Classes, Graphics, Controls,
   TB2Dock;

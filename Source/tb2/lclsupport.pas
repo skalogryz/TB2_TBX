@@ -3,13 +3,22 @@ unit lclsupport;
 interface
 
 uses
-  Classes, SysUtils, Graphics, LCLType;
+  Classes, SysUtils, Graphics, LCLType, Controls;
 
 procedure InitializeCriticalSection(var CriticalSection : TRTLCriticalSection);
 procedure DeleteCriticalSection(var CriticalSection : TRTLCriticalSection);
 
 function ToSmallPoint(w: WParam): TSmallPoint;
 function CopyPalette(src: HPALETTE): HPALETTE;
+
+type
+
+  { TVCLCompatcontrol }
+
+  TVCLCompatcontrol = class helper for TControl
+  public
+    procedure SendCancelMode(Sender: TObject);
+  end;
 
 implementation
 
@@ -33,6 +42,13 @@ function CopyPalette(src: HPALETTE): HPALETTE;
 begin
   //todo:
   Result := src;
+end;
+
+{ TVCLCompatcontrol }
+
+procedure TVCLCompatcontrol.SendCancelMode(Sender: TObject);
+begin
+  //todo:
 end;
 
 end.

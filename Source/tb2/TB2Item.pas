@@ -46,7 +46,7 @@ uses
   SysUtils,
 
   {$IFnDEF FPC} Windows, Messages, {$ELSE}
-  LclIntf, LCLType, LMessages, TBXLCLWinCompat, lclsupport, LCLProc,
+  LclIntf, LCLType, LMessages, TB2LCLWinCompat, lclsupport, LCLProc,
   {$ENDIF}
   Graphics, Controls, Forms, Dialogs, StdCtrls, CommCtrl,
   Menus, ActnList, ImgList, TB2Anim, Classes, TB2Types;
@@ -2784,6 +2784,9 @@ end;
 
 function TTBItemViewer.GetAccObject: TTBBaseAccObject;
 begin
+  {$ifdef fpc}
+  Result := nil;
+  {$else}
   if FAccObjectInstance = nil then begin
     if not InitializeOleAcc then begin
       Result := nil;
@@ -2792,6 +2795,7 @@ begin
     FAccObjectInstance := TTBItemViewerAccObject.Create(Self);
   end;
   Result := FAccObjectInstance;
+  {$endif}
 end;
 
 procedure TTBItemViewer.AccSelect(const AExecute: Boolean);
@@ -2803,8 +2807,10 @@ begin
     reference as an interface so that the object will be destroyed when we
     exit if it's no longer used. }
   Obj := GetAccObject;
+  {$ifndef fpc}
   if Assigned(Obj) then
     (FAccObjectInstance as TTBItemViewerAccObject).HandleAccSelect(AExecute);
+ {$endif}
 end;
 
 procedure TTBItemViewer.PostAccSelect(const AExecute: Boolean);
@@ -3704,6 +3710,7 @@ end;
 
 function TTBView.GetAccObject: TTBBaseAccObject;
 begin
+  {$ifndef fpc}
   if FAccObjectInstance = nil then begin
     if not InitializeOleAcc then begin
       Result := nil;
@@ -3717,6 +3724,9 @@ begin
     {$ENDIF}
   end;
   Result := FAccObjectInstance;
+  {$else}
+  Result := nil;
+  {$endif}
 end;
 
 function TTBView.HandleWMGetObject(var Message: TMessage): Boolean;

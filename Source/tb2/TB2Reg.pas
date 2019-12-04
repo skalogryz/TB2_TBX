@@ -41,8 +41,9 @@ uses
   {$IFnDEF FPC}
   {$IFDEF JR_D6} DesignIntf, DesignEditors, VCLEditors, {$ELSE} DsgnIntf, {$ENDIF}
   {$ELSE}
-  tb2Delphi, LclIntf, LCLType, LCLStrConsts, Win32Int, InterfaceBase,
-  PropEdits, ComponentEditors, LResources, GraphPropEdits,
+  LclIntf, LCLType, LCLStrConsts, Win32Int, InterfaceBase,
+  //PropEdits, ComponentEditors,
+  LResources, //,GraphPropEdits,
   {$ENDIF}
 //  TB2DsgnItemEditor,
   Classes, Graphics;

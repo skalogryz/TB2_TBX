@@ -1,4 +1,4 @@
-unit TBXLCLWinCompat;
+unit TB2LCLWinCompat;
 
 interface
 
@@ -53,6 +53,7 @@ const
   WM_NCLButtonDblClk  = LM_NCLBUTTONDBLCLK;
   WM_NCACTIVATE       = LM_NCACTIVATE;
   WM_TIMER            = LM_TIMER;
+  WM_MouseLeave       = LM_MOUSELEAVE;
 
   WHEEL_DELTA         = 120;
 
@@ -132,6 +133,8 @@ type
   TWMNCMouseMove     = TLMNCMouseMove;
   TWMSetCursor       = TLMSetCursor;
   TWMTimer           = TLMTimer;
+  TWMWinIniChange    = TLMessage;
+  TWMCancelMode      = TLMessage;
 
 const
   // from WinAPI (Windows)
@@ -259,6 +262,17 @@ function GetUpdateRect(hWnd: HWND; const lpRect: TRect; bErase: LongBool): LongB
 function GetWindow(hWnd: HWND; direction: Longword): HWND; //todo: LCL should be used
 function SetPixelV(dc: HDC; x,y: integer; color: COLORREF): LongBool; //todo:
 function OffsetWindowOrgEx(DC: hdc; x,y: integer; var lppt : TPoint): WINBOOL;
+function WideCharToMultiByte(
+  CodePage: UInt;
+  dwFlags: LongWord;
+  lpWideCharStr: PWideChar;
+  cchWideChar: integer;
+  lpMultiByteStr: PAnsiChar;
+  cbMultiByte: integer;
+  lpDefaultChar: PChar;
+  lpUsedDefaultChar: PLongBool
+): Integer;
+function MessageBeep(uType: LongWord): LongBool;
 
 implementation
 
@@ -383,6 +397,25 @@ end;
 
 function OffsetWindowOrgEx(DC: hdc; x,y: integer; var lppt : TPoint): WINBOOL;
 begin
+end;
+
+function WideCharToMultiByte(
+  CodePage: UInt;
+  dwFlags: LongWord;
+  lpWideCharStr: PWideChar;
+  cchWideChar: integer;
+  lpMultiByteStr: PAnsiChar;
+  cbMultiByte: integer;
+  lpDefaultChar: PChar;
+  lpUsedDefaultChar: PLongBool
+): Integer;
+begin
+  Result:=0;
+end;
+
+function MessageBeep(uType: LongWord): LongBool;
+begin
+  Result:=false;
 end;
 
 initialization

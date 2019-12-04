@@ -44,7 +44,7 @@ uses
   SysUtils,
   TB2Types,
   {$IFnDEF FPC} Windows, Messages, Consts, {$ELSE}
-  LclIntf, LCLType, LMessages, TBXLCLWinCompat, lclsupport, LCLProc, LCLStrConsts, InterfaceBase,
+  LclIntf, LCLType, LMessages, TB2LCLWinCompat, lclsupport, LCLProc, LCLStrConsts, InterfaceBase,
   {$ENDIF}
   IniFiles,
   Graphics,

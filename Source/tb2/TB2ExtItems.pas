@@ -33,7 +33,7 @@ interface
 
 {$I TB2Ver.inc}
 
-uses {$IFDEF FPC} tb2Delphi,  {$ENDIF}
+uses 
   {$IFnDEF FPC} Windows, {$ELSE} Windows, LclIntf, LCLType, LCLStrConsts, InterfaceBase, {$ENDIF}
   {$IFnDEF FPC} Messages, {$ELSE}  LMessages, {$ENDIF}
   SysUtils, Classes, Graphics, Controls, Forms, Dialogs,

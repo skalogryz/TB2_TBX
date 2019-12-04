@@ -36,7 +36,7 @@ uses
   Types,
   SysUtils, StdCtrls,
   {$IFnDEF FPC} Windows, Messages, {$ELSE}
-  LclIntf, LCLType, LMessages, TBXLCLWinCompat,
+  LclIntf, LCLType, LMessages, TB2LCLWinCompat,
   {$ENDIF}
   Controls,
   Classes,
