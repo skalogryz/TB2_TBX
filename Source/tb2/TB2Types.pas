@@ -6,7 +6,7 @@ interface
 
 
 uses
-  windows, Types, SysUtils, Classes, Graphics, Printers, ExtCtrls, Controls;
+  Types, SysUtils, Classes, Graphics, Printers, ExtCtrls, Controls;
 
 const
 
@@ -85,43 +85,43 @@ const
  *
 //******************************************************************************}
 
-  {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  = $0400;
+  WM_USER  = $0400;
 
   {custom messages  }
-  RM_COMPONENTNAMECHANGE = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 100;  {enables ppComponent to notify ppDesignerWindow}
-  RM_BANDHEIGHTCHANGE    = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 101;  {enables ppBands to notify ppDesignerWindow}
-  RM_REPORTDESTROY       = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 102;  {enables ppReport to notify ppDesignerWindow}
-  RM_CALCWORKSPACEWIDTH  = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 103;  {enables ppReport to notify ppDesignerWindow}
-  RM_COMPONENTDESTROY    = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 104;  {enables ppReport to notify ppDesignerWindow}
-  RM_UNITSCHANGE         = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 105;  {enables ppReport to notify ppDesignerWindow}
-  RM_GROUPMENUCLICK      = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 106;  {enables ppGroupBand to notify ppDesignerWindow}
-  RM_COMPONENTCHANGE     = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 107;  {enables ppReport, ppBands, ppComponent to notify ppDesignerWindow}
-  RM_COMPONENTDATAPIPELINECHANGE = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 108;  {enables ppComponent to notify ppDesignerWindow}
-  RM_SETREPORT           = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 109;  {enables ppReport to notify ppDesignerWindow}
-  RM_SETLANGUAGE         = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 110;  {enables ppReport to notify ppDesignerWindow}
-  RM_GETDISPLAYFORMATS   = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 111;  {enables ppComponent to notify ppDesignerWindow}
-  RM_INSTANTIATECOMPONENTDC = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 112;  {enables ppComponent to notify ppDesignerWindow}
-  RM_INSTANTIATEBANDDC   = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 113;  {enables ppBand to notify ppDesignerWindow}
-  RM_BANDADDED           = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 114;  {enables ppReport to notify ppDesignerWindow}
-  RM_BANDREMOVED         = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 115;  {enables ppReport to notify ppDesignerWindow}
-  RM_BANDDESTROY         = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 116;  {enables ppBand to notify ppDesignerWindow}
-  RM_REPORTPRINTING      = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 117;  {enables ppReport to notify ppDesignerWindow}
+  RM_COMPONENTNAMECHANGE = WM_USER + 100;  {enables ppComponent to notify ppDesignerWindow}
+  RM_BANDHEIGHTCHANGE    = WM_USER + 101;  {enables ppBands to notify ppDesignerWindow}
+  RM_REPORTDESTROY       = WM_USER + 102;  {enables ppReport to notify ppDesignerWindow}
+  RM_CALCWORKSPACEWIDTH  = WM_USER + 103;  {enables ppReport to notify ppDesignerWindow}
+  RM_COMPONENTDESTROY    = WM_USER + 104;  {enables ppReport to notify ppDesignerWindow}
+  RM_UNITSCHANGE         = WM_USER + 105;  {enables ppReport to notify ppDesignerWindow}
+  RM_GROUPMENUCLICK      = WM_USER + 106;  {enables ppGroupBand to notify ppDesignerWindow}
+  RM_COMPONENTCHANGE     = WM_USER + 107;  {enables ppReport, ppBands, ppComponent to notify ppDesignerWindow}
+  RM_COMPONENTDATAPIPELINECHANGE = WM_USER + 108;  {enables ppComponent to notify ppDesignerWindow}
+  RM_SETREPORT           = WM_USER + 109;  {enables ppReport to notify ppDesignerWindow}
+  RM_SETLANGUAGE         = WM_USER + 110;  {enables ppReport to notify ppDesignerWindow}
+  RM_GETDISPLAYFORMATS   = WM_USER + 111;  {enables ppComponent to notify ppDesignerWindow}
+  RM_INSTANTIATECOMPONENTDC = WM_USER + 112;  {enables ppComponent to notify ppDesignerWindow}
+  RM_INSTANTIATEBANDDC   = WM_USER + 113;  {enables ppBand to notify ppDesignerWindow}
+  RM_BANDADDED           = WM_USER + 114;  {enables ppReport to notify ppDesignerWindow}
+  RM_BANDREMOVED         = WM_USER + 115;  {enables ppReport to notify ppDesignerWindow}
+  RM_BANDDESTROY         = WM_USER + 116;  {enables ppBand to notify ppDesignerWindow}
+  RM_REPORTPRINTING      = WM_USER + 117;  {enables ppReport to notify ppDesignerWindow}
 
-  RM_ADDREPORT           = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 118;  {enables ppReport to notify ppDesignerWindow}
-  RM_REMOVEREPORT        = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 119;  {enables ppReport to notify ppDesignerWindow}
-  RM_BOUNDSLOCKCHANGE    = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 120;  {enables ppComponent to notify ppDesignerWindow}
-  RM_CAPTIONCHANGE       = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 121;  {enables ppComponent to notify ppDesignerWindow}
-  RM_REPORTLOADSTART     = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 122;  {enables ppReport to notify ppDesignerWindow}
-  RM_REPORTLOADEND       = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 123;  {enables ppReport to notify ppDesignerWindow}
-  RM_REPORTUPDATEBEGIN   = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 124;  {enables ppReport to notify ppDesignerWindow}
-  RM_REPORTUPDATEEND     = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 125;  {enables ppReport to notify ppDesignerWindow}
-  RM_PRINTERCHANGE       = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 126;  {enable  ppReport to notify ppDesignerWindow}
-  RM_COMPONENTADDED      = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 127;  {enable  ppReport to notify ppDesignerWindow}
-  RM_COMPONENTREMOVED    = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 128;  {enable  ppReport to notify ppDesignerWindow}
-  RM_COMPONENTUPDATED    = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 129;  {enable  ppReport to notify ppDesignerWindow}
-  RM_REPORTNEWSTART      = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 130;  {enables ppReport to notify ppDesignerWindow}
-  RM_REPORTNEWEND        = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 131;  {enables ppReport to notify ppDesignerWindow}
-  RM_REPORTSAVESTART     = {$IFDEF FPC}LM_USER{$ELSE}WM_USER{$ENDIF}  + 132;  {enables ppReport to notify ppDesignerWindow}
+  RM_ADDREPORT           = WM_USER + 118;  {enables ppReport to notify ppDesignerWindow}
+  RM_REMOVEREPORT        = WM_USER + 119;  {enables ppReport to notify ppDesignerWindow}
+  RM_BOUNDSLOCKCHANGE    = WM_USER + 120;  {enables ppComponent to notify ppDesignerWindow}
+  RM_CAPTIONCHANGE       = WM_USER + 121;  {enables ppComponent to notify ppDesignerWindow}
+  RM_REPORTLOADSTART     = WM_USER + 122;  {enables ppReport to notify ppDesignerWindow}
+  RM_REPORTLOADEND       = WM_USER + 123;  {enables ppReport to notify ppDesignerWindow}
+  RM_REPORTUPDATEBEGIN   = WM_USER + 124;  {enables ppReport to notify ppDesignerWindow}
+  RM_REPORTUPDATEEND     = WM_USER + 125;  {enables ppReport to notify ppDesignerWindow}
+  RM_PRINTERCHANGE       = WM_USER + 126;  {enable  ppReport to notify ppDesignerWindow}
+  RM_COMPONENTADDED      = WM_USER + 127;  {enable  ppReport to notify ppDesignerWindow}
+  RM_COMPONENTREMOVED    = WM_USER + 128;  {enable  ppReport to notify ppDesignerWindow}
+  RM_COMPONENTUPDATED    = WM_USER + 129;  {enable  ppReport to notify ppDesignerWindow}
+  RM_REPORTNEWSTART      = WM_USER + 130;  {enables ppReport to notify ppDesignerWindow}
+  RM_REPORTNEWEND        = WM_USER + 131;  {enables ppReport to notify ppDesignerWindow}
+  RM_REPORTSAVESTART     = WM_USER + 132;  {enables ppReport to notify ppDesignerWindow}
 
 {**************************************************************************************
  *
