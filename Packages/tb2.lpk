@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="4">
+    <PathDelim Value="\"/>
+    <Name Value="tb2"/>
+    <Type Value="RunAndDesignTime"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <IncludeFiles Value="..\Source\tb2"/>
+        <OtherUnitFiles Value="..\Source\tb2"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\"/>
+      </SearchPaths>
+    </CompilerOptions>
+    <Files Count="19">
+      <Item1>
+        <Filename Value="..\Source\tb2\lclsupport.pas"/>
+        <UnitName Value="lclsupport"/>
+      </Item1>
+      <Item2>
+        <Filename Value="..\Source\tb2\TB2Acc.pas"/>
+        <UnitName Value="TB2Acc"/>
+      </Item2>
+      <Item3>
+        <Filename Value="..\Source\tb2\TB2Anim.pas"/>
+        <UnitName Value="TB2Anim"/>
+      </Item3>
+      <Item4>
+        <Filename Value="..\Source\tb2\TB2Common.pas"/>
+        <UnitName Value="TB2Common"/>
+      </Item4>
+      <Item5>
+        <Filename Value="..\Source\tb2\TB2Consts.pas"/>
+        <UnitName Value="TB2Consts"/>
+      </Item5>
+      <Item6>
+        <Filename Value="..\Source\tb2\TB2Dock.pas"/>
+        <UnitName Value="TB2Dock"/>
+      </Item6>
+      <Item7>
+        <Filename Value="..\Source\tb2\TB2ExtItems.pas"/>
+        <UnitName Value="TB2ExtItems"/>
+      </Item7>
+      <Item8>
+        <Filename Value="..\Source\tb2\TB2Hook.pas"/>
+        <UnitName Value="TB2Hook"/>
+      </Item8>
+      <Item9>
+        <Filename Value="..\Source\tb2\TB2Item.pas"/>
+        <UnitName Value="TB2Item"/>
+      </Item9>
+      <Item10>
+        <Filename Value="..\Source\tb2\TB2MDI.pas"/>
+        <UnitName Value="TB2MDI"/>
+      </Item10>
+      <Item11>
+        <Filename Value="..\Source\tb2\TB2MRU.pas"/>
+        <UnitName Value="TB2MRU"/>
+      </Item11>
+      <Item12>
+        <Filename Value="..\Source\tb2\TB2OleMarshal.pas"/>
+        <UnitName Value="TB2OleMarshal"/>
+      </Item12>
+      <Item13>
+        <Filename Value="..\Source\tb2\TB2Reg.pas"/>
+        <UnitName Value="TB2Reg"/>
+      </Item13>
+      <Item14>
+        <Filename Value="..\Source\tb2\tb2reg_comp.pas"/>
+        <UnitName Value="TB2Reg_Comp"/>
+      </Item14>
+      <Item15>
+        <Filename Value="..\Source\tb2\TB2Toolbar.pas"/>
+        <UnitName Value="TB2Toolbar"/>
+      </Item15>
+      <Item16>
+        <Filename Value="..\Source\tb2\TB2ToolWindow.pas"/>
+        <UnitName Value="TB2ToolWindow"/>
+      </Item16>
+      <Item17>
+        <Filename Value="..\Source\tb2\TB2Types.pas"/>
+        <UnitName Value="TB2Types"/>
+      </Item17>
+      <Item18>
+        <Filename Value="..\Source\tb2\TB2Ver.inc"/>
+        <Type Value="Include"/>
+      </Item18>
+      <Item19>
+        <Filename Value="..\Source\tb2\TB2Version.pas"/>
+        <UnitName Value="TB2Version"/>
+      </Item19>
+    </Files>
+    <RequiredPkgs Count="2">
+      <Item1>
+        <PackageName Value="LCL"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="FCL"/>
+      </Item2>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>
