@@ -52,6 +52,7 @@ const
   WM_CAPTURECHANGED   = LM_CAPTURECHANGED;
   WM_NCLButtonDblClk  = LM_NCLBUTTONDBLCLK;
   WM_NCACTIVATE       = LM_NCACTIVATE;
+  WM_TIMER            = LM_TIMER;
 
   WHEEL_DELTA         = 120;
 
@@ -130,6 +131,7 @@ type
   TWMMouseMove       = TLMMouseMove;
   TWMNCMouseMove     = TLMNCMouseMove;
   TWMSetCursor       = TLMSetCursor;
+  TWMTimer           = TLMTimer;
 
 const
   // from WinAPI (Windows)
@@ -256,6 +258,7 @@ function BringWindowToTop(win: HWND): LongBool; //todo: LCL should be used
 function GetUpdateRect(hWnd: HWND; const lpRect: TRect; bErase: LongBool): LongBool;
 function GetWindow(hWnd: HWND; direction: Longword): HWND; //todo: LCL should be used
 function SetPixelV(dc: HDC; x,y: integer; color: COLORREF): LongBool; //todo:
+function OffsetWindowOrgEx(DC: hdc; x,y: integer; var lppt : TPoint): WINBOOL;
 
 implementation
 
@@ -376,6 +379,10 @@ end;
 function SetPixelV(dc: HDC; x,y: integer; color: COLORREF): LongBool;
 begin
   Result := false;
+end;
+
+function OffsetWindowOrgEx(DC: hdc; x,y: integer; var lppt : TPoint): WINBOOL;
+begin
 end;
 
 initialization
