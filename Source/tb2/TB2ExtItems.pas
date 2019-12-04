@@ -39,7 +39,7 @@ uses
   LclIntf, LCLType, LCLStrConsts, InterfaceBase, TB2LCLWinCompat,
   {$ENDIF}
   SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, CommCtrl, Menus, ActnList,
+  StdCtrls, Menus, ActnList,
   TB2Item;
 
 type

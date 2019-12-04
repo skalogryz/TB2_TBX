@@ -48,7 +48,7 @@ uses
   {$IFnDEF FPC} Windows, Messages, {$ELSE}
   LclIntf, LCLType, LMessages, TB2LCLWinCompat, lclsupport, LCLProc,
   {$ENDIF}
-  Graphics, Controls, Forms, Dialogs, StdCtrls, CommCtrl,
+  Graphics, Controls, Forms, Dialogs, StdCtrls,
   Menus, ActnList, ImgList, TB2Anim, Classes, TB2Types;
 
 const
@@ -928,7 +928,7 @@ implementation
 uses
   {$IFDEF CLR} System.Runtime.InteropServices, System.Text, System.Threading,
     Types, WinUtils, {$ENDIF}
-  MMSYSTEM, TB2Consts, TB2Common, IMM, TB2Acc;
+  TB2Consts, TB2Common, TB2Acc;
 
 {$UNDEF ALLOCHWND_CLASSES}
 {$IFNDEF CLR}
