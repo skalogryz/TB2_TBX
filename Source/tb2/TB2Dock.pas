@@ -3068,6 +3068,11 @@ begin
       { If the window is hidden but is still active, find and activate a
         different window }
       SetActiveWindow(FindTopLevelWindow(Handle));
+
+    {$ifdef fpc}
+    // inherited sets the internal LCL  FWinControlFlags
+    inherited;
+    {$endif}
   end;
 end;
 
