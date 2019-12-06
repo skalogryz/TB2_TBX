@@ -79,7 +79,7 @@ const
   WM_NCMBUTTONDOWN    = 167;
   WM_NCMBUTTONUP      = 168;
   WM_NCMBUTTONDBLCLK  = 169;
-
+  WM_COMMAND          = LM_COMMAND;
 
   WHEEL_DELTA         = 120;
 
@@ -332,6 +332,44 @@ function WideCharToMultiByte(
 ): Integer;
 function MessageBeep(uType: LongWord): LongBool;
 
+const
+  { Combo Box  }
+  CB_ADDSTRING             = 323;
+  CB_DELETESTRING          = 324;
+  CB_DIR                   = 325;
+  CB_FINDSTRING            = 332;
+  CB_FINDSTRINGEXACT       = 344;
+  CB_GETCOUNT              = 326;
+  CB_GETCURSEL             = 327;
+  CB_GETDROPPEDCONTROLRECT = 338;
+  CB_GETDROPPEDSTATE       = 343;
+  CB_GETDROPPEDWIDTH       = 351;
+  CB_GETEDITSEL            = 320;
+  CB_GETEXTENDEDUI         = 342;
+  CB_GETHORIZONTALEXTENT   = 349;
+  CB_GETITEMDATA           = 336;
+  CB_GETITEMHEIGHT         = 340;
+  CB_GETLBTEXT             = 328;
+  CB_GETLBTEXTLEN          = 329;
+  CB_GETLOCALE             = 346;
+  CB_GETTOPINDEX           = 347;
+  CB_INITSTORAGE           = 353;
+  CB_INSERTSTRING          = 330;
+  CB_LIMITTEXT             = 321;
+  CB_RESETCONTENT          = 331;
+  CB_SELECTSTRING          = 333;
+  CB_SETCURSEL             = 334;
+  CB_SETDROPPEDWIDTH       = 352;
+  CB_SETEDITSEL            = 322;
+  CB_SETEXTENDEDUI         = 341;
+  CB_SETHORIZONTALEXTENT   = 350;
+  CB_SETITEMDATA           = 337;
+  CB_SETITEMHEIGHT         = 339;
+  CB_SETLOCALE             = 345;
+  CB_SETTOPINDEX           = 348;
+  CB_SHOWDROPDOWN          = 335;
+
+
 {$ifndef mswindows}
 // these variables are present at System Utils
 var
@@ -419,6 +457,8 @@ function TrackPopupMenuEx({%H-}Menu: HMENU; {%H-}uFlags: UINT; x,y: Integer;
   wnd: HWND; lptpm: Pointer): LongBool;
 
 function GetClipBox(DC: HDC; var BoxR: TRect): integer;
+function EnumFontFamiliesEx(DC: HDC; var LogFont:TLogFont;
+  Callback: FontEnumExProc; Lparam:LParam; Flags: dword): longint;
 
 implementation
 
@@ -611,6 +651,14 @@ function GetClipBox(DC: HDC; var BoxR: TRect): integer;
 begin
   Result := LCLIntf.GetClipBox(dc, @BoxR);
 end;
+
+function EnumFontFamiliesEx(DC: HDC; var LogFont:TLogFont;
+  Callback: FontEnumExProc; Lparam:LParam; Flags: dword): longint;
+begin
+  Result := LCLIntf.EnumFontFamiliesEx(DC, @LogFont,
+    Callback, LParam, Flags);
+end;
+
 
 initialization
   mainThreadID := ThreadID;
