@@ -18,7 +18,6 @@ type
   TVCLCompatcontrol = class helper for TControl
   public
     procedure SendCancelMode(Sender: TObject);
-    function GetControlsAlignment: TAlignment;
     function DrawTextBiDiModeFlags(aflags: integer): integer;
   end;
 
@@ -92,11 +91,6 @@ end;
 procedure TVCLCompatcontrol.SendCancelMode(Sender: TObject);
 begin
   //todo:
-end;
-
-function TVCLCompatcontrol.GetControlsAlignment: TAlignment;
-begin
-  Result:=taLeftJustify;
 end;
 
 function TVCLCompatcontrol.DrawTextBiDiModeFlags(aflags: integer): integer;
