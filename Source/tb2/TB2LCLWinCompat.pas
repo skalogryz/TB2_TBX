@@ -24,6 +24,7 @@ const
   WM_GETMINMAXINFO    = {$ifndef mswindows}LM_USER + $3008{$else}Windows.WM_GETMINMAXINFO {$endif};
   WM_MOUSEACTIVATE    = {$ifndef mswindows}LM_USER + $3009{$else}Windows.WM_MOUSEACTIVATE {$endif};
   WM_NCMouseLeave     = {$ifndef mswindows}LM_USER + $300B{$else}Windows.WM_NCMouseLeave  {$endif};
+  WM_SETREDRAW        = {$ifndef mswindows}LM_USER + $300A{$else}Windows.WM_SETREDRAW     {$endif};
   WM_DEADCHAR         = LM_USER + $3010;
   WM_SYSDEADCHAR      = LM_USER + $3011;
 
