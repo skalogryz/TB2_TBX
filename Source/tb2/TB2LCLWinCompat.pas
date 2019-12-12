@@ -394,7 +394,7 @@ type
     hbmpChecked   : HBITMAP;
     hbmpUnchecked : HBITMAP;
     dwItemData    : ULONG_PTR;
-    dwTypeData    : LPWSTR;
+    dwTypeData    : PWideChar;
     cch           : UINT;
     hbmpItem      : HBITMAP;
   end;
