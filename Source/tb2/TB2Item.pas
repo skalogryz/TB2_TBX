@@ -45,7 +45,7 @@ uses
   Types,
   SysUtils,
 
-  {$IFnDEF FPC} Windows, Messages, {$ELSE}
+  {$IFnDEF FPC} Windows, Messages, Imm,{$ELSE}
   LclIntf, LCLType, LMessages, TB2LCLWinCompat, lclsupport, LCLProc,
   {$ENDIF}
   Graphics, Controls, Forms, Dialogs, StdCtrls,
@@ -6228,6 +6228,14 @@ begin
     end;
   end;
 end;
+
+
+{$ifndef fpc}
+function ToSmallPoint(prm: lParam): TSmallPoint; inline;
+begin
+  Result:=TSmallPoint(prm);
+end;
+{$endif}
 
 procedure TTBModalHandler.Loop(const RootView: TTBView;
   const AMouseDown, AExecuteSelected, AFromMSAA, TrackRightButton: Boolean);

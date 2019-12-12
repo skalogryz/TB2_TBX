@@ -35,7 +35,7 @@ interface
 uses
   Types,
   SysUtils, StdCtrls,
-  {$IFnDEF FPC} Windows, Messages, {$ELSE}
+  {$IFnDEF FPC} Windows, Messages, MMSystem, {$ELSE}
   LclIntf, LCLType, LMessages, TB2LCLWinCompat,
   {$ENDIF}
   Controls,

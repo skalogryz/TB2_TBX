@@ -574,11 +574,11 @@ procedure TBRegSavePositions(const OwnerComponent: TComponent;
 procedure TBIniLoadPositions(const OwnerComponent: TComponent;
   const Filename, SectionNamePrefix: String); overload;
 procedure TBIniLoadPositions(const OwnerComponent: TComponent;
-  const IniFile: TIniFile; const SectionNamePrefix: String); overload;
+  const IniFile: TCustomIniFile; const SectionNamePrefix: String); overload;
 procedure TBIniSavePositions(const OwnerComponent: TComponent;
   const Filename, SectionNamePrefix: String); overload;
 procedure TBIniSavePositions(const OwnerComponent: TComponent;
-  const IniFile: TIniFile; const SectionNamePrefix: String); overload;
+  const IniFile: TCustomIniFile; const SectionNamePrefix: String); overload;
 
 procedure TBCustomLoadPositions(const OwnerComponent: TComponent;
   const ReadIntProc: TTBPositionReadIntProc;
@@ -5749,7 +5749,7 @@ begin
 end;
 
 procedure TBIniLoadPositions(const OwnerComponent: TComponent;
-  const IniFile: TIniFile; const SectionNamePrefix: String);
+  const IniFile: TCustomIniFile; const SectionNamePrefix: String);
 var
   Data: TIniReadWriteData;
 begin
@@ -5777,7 +5777,7 @@ begin
 end;
 
 procedure TBIniSavePositions(const OwnerComponent: TComponent;
-  const IniFile: TIniFile; const SectionNamePrefix: String);
+  const IniFile: TCustomIniFile; const SectionNamePrefix: String);
 var
   Data: TIniReadWriteData;
 begin

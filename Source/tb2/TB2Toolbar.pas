@@ -316,6 +316,11 @@ uses
   {$IFDEF CLR} System.Runtime.InteropServices, System.Text, {$ENDIF}
   TB2Consts, TB2Common, TB2Hook;
 
+{$ifndef fpc}
+type
+  PtrUInt = NativeUInt;
+{$endif}
+
 {$IFDEF WIN64}
 type
   TSmallPoint = TPoint;

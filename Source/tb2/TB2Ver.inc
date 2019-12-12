@@ -78,6 +78,10 @@
                       {$DEFINE JR_D11}  { then it must be at least Delphi 11 (2007) }
                       {$IFNDEF VER190}  { if it's not .NET Delphi 11 (2007) }
                         {$DEFINE JR_D12}  { then it must be at least Delphi 12 (2009) }
+                        {$IFNDEF VER250}
+                          //  see http://docwiki.embarcadero.com/RADStudio/Rio/en/Compiler_Versions
+                          {$DEFINE JR_D17}
+                        {$ENDIF}
                       {$ENDIF}
                     {$ENDIF}
                   {$ENDIF}
