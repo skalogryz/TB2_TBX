@@ -114,3 +114,8 @@
 {$IFDEF JR_D6}
   {$WARN SYMBOL_PLATFORM OFF}
 {$ENDIF}
+
+{$IFDEF FPC}
+  {$UNDEF JR_D17}
+{$endif}
+
