@@ -2,7 +2,7 @@
   This source is only used to compile and install the package.
  }
 
-unit tb2_ide;
+unit tb2_laz_design;
 
 {$warn 5023 off : no warning about unused units}
 interface
