@@ -99,15 +99,21 @@ implementation
 
 uses
   {$IFDEF CLR} System.Text, System.IO, {$ENDIF}
-  TB2Common, TB2Consts, CommDlg;
+  TB2Common, TB2Consts
+  {$ifndef fpc}, CommDlg{$endif};
 
 procedure ChangeFileNameToTitle(var S: String);
 {$IFNDEF CLR}
 var
   Buf: array[0..MAX_PATH-1] of Char;
 begin
+  {$ifndef fpc}
   if GetFileTitle(PChar(S), Buf, SizeOf(Buf) div SizeOf(Buf[0])) = 0 then
     S := Buf;
+  {$else}
+  //todo:
+  S:='File';
+  {$endif}
 end;
 {$ELSE}
 var
