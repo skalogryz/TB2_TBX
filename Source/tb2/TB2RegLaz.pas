@@ -32,8 +32,11 @@ unit TB2RegLaz;
 interface
 
 uses
-  Classes, TB2Dock, TB2Toolbar, TB2ToolWindow, TB2Item,
-  TB2MRU, TB2MDI;
+  Classes, TB2Dock, TB2Toolbar, TB2ToolWindow, TB2Item
+  {$ifdef mswindows}
+  ,TB2MRU, TB2MDI
+  {$endif}
+  ;
 
 {$I TB2Ver.inc}
 
@@ -41,11 +44,15 @@ procedure Register;
 
 implementation
 
+{$R TB2DsgnItemEditor.res}
+
 procedure Register;
 begin
   RegisterComponents('Toolbar2000', [TTBDock, TTBToolbar, TTBToolWindow,
-    TTBPopupMenu, TTBImageList, TTBItemContainer, TTBBackground, TTBMRUList,
-    TTBMDIHandler]);
+    TTBPopupMenu, TTBImageList, TTBItemContainer, TTBBackground]);
+  {$ifdef mswindows}
+  RegisterComponents('Toolbar2000', [TTBMRUList, TTBMDIHandler]);
+  {$endif}
 end;
 
 end.
