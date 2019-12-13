@@ -31,6 +31,10 @@ unit TB2RegLaz;
 
 interface
 
+uses
+  Classes, TB2Dock, TB2Toolbar, TB2ToolWindow, TB2Item,
+  TB2MRU, TB2MDI;
+
 {$I TB2Ver.inc}
 
 procedure Register;
@@ -39,5 +43,9 @@ implementation
 
 procedure Register;
 begin
+  RegisterComponents('Toolbar2000', [TTBDock, TTBToolbar, TTBToolWindow,
+    TTBPopupMenu, TTBImageList, TTBItemContainer, TTBBackground, TTBMRUList,
+    TTBMDIHandler]);
 end;
+
 end.
