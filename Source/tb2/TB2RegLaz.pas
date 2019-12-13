@@ -44,6 +44,7 @@ procedure Register;
 
 implementation
 
+{$R TB2Reg.dcr} // this is a basic .res file
 {$R TB2DsgnItemEditor.res}
 
 procedure Register;
