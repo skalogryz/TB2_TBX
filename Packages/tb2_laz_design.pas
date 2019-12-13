@@ -18,5 +18,5 @@ begin
 end;
 
 initialization
-  RegisterPackage('tb2_ide', @Register);
+  RegisterPackage('tb2_laz_design', @Register);
 end.
